@@ -16,6 +16,10 @@ module.exports = {
         outfit: ["Outfit", "sans-serif"],
       },
     },
+    screens: {
+      'sm': {'max': '800px'},
+      // => @media (max-width: 639px) { ... }
+    }
   },
   plugins: [],
 };

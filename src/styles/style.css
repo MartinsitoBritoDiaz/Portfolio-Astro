@@ -1,4 +1,7 @@
 
+/* ========== import custom styles ========== */
+@import "styles-custom.css";
+
 :root {
 
 	--accent-light: #c561f6;
