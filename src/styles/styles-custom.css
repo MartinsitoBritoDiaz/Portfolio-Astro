@@ -34,7 +34,40 @@
   }
 }
 
-main {
+#parent {
+    margin:auto;
+  }
+  
+  .child{
+    height: 204px;
+  }
+  .child:before {
+    height: 40vh;
+
+    width: 100%;
+    content: ' ';   
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.card-pro{
+    height: 120px;
+    width: 100%;
+}
+/* 
+  .child {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    box-shadow:
+      760px 0 0 red,
+      1520px 0 0 red,
+     -760px 0 0 red,
+     -1520px 0 0 red;
+  } */
+
+/* main {
     margin: auto;
     max-width: 60ch;
   }
@@ -43,6 +76,7 @@ main {
     font-weight: 800;
     margin: 0;
   }
+
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -74,4 +108,4 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
-  }
+  } */

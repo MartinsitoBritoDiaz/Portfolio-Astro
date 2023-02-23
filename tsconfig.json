@@ -17,7 +17,8 @@
       "@components/*": ["src/components/*"],
       "@data": ["src/data/info"],
       "@utils": ["src/utils"],
-      "@types": ["src/types"]
+      "@types": ["src/types"],
+      "@config": ["src/config"],
     }
   }
 }

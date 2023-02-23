@@ -6,10 +6,10 @@ module.exports = {
     extend: {
       colors: {
         dark: "#111111",
-        light: "#FFFFFF",
+        light: " #f0f3f4 ",
         blue: "#33d2ff",
-        gray: "#FFFFFF",
-        "dark-gray": "#FFFF",
+        gray: "#f0f3f4 ",
+        "dark-gray": "#f0f3f4 ",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],

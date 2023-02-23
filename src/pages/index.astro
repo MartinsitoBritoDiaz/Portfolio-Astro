@@ -1,53 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { info } from "astro/dist/core/logger/core";
+import { info } from "@data";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "@config";
+import BaseHead from "@components/general/BaseHead.astro";
+import Hero from "@components/home/Hero.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
   <body>
     <Layout>
-      <main>
-        <h1 class="dark:text-light">
-          Welcome to Maritnsito's Portfolio<span class="text-gradient"
-            >Astro</span>
-        </h1>
-        <p class="instructions">
-          To get started, open the directory <code>src/pages</code> in your project.<br
-          />
-          <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-        </p>
-        <ul role="list" class="link-card-grid dark:light">
-          <Card
-            href="https://docs.astro.build/"
-            title="Documentation"
-            body="Learn how Astro works and explore the official API docs."
-          />
-          <Card
-            href="https://astro.build/integrations/"
-            title="Integrations"
-            body="Supercharge your project with new frameworks and libraries."
-          />
-          <Card
-            href="https://astro.build/themes/"
-            title="Themes"
-            body="Explore a galaxy of community-built starter themes."
-          />
-          <Card
-            href="https://astro.build/chat/"
-            title="Community"
-            body="Come say hi to our amazing Discord community. ❤️"
-          />
-        </ul>
-      </main>
+      <Hero name={info.name.split(" ")[0]} degree={info.degree} about={""} />
+
+	  <div class="flex items-center justify-center">
+		<img src={info.codeBackground} class="h-70 w-60 my-10"/>
+	</div>
+
+		<div class="h-100 w-full before:dark:bg-[#202020] child">
+			<h2 class="py-5 dark:text-light text-3xl font-bold text-center">Projects that I've been working on</h2>
+			<div class="flex items-center justify-between w-auto p-10 gap-x-10">
+				
+			</div>
+		</div>
     </Layout>
   </body>
 </html>
+
+<!-- Two Cards  -->
+<!-- <div class="bg-blue rounded-xl p-2 card-pro flex items-center justify-center align-middle">
+					Hello world
+			 	</div>
+
+				 <div class="bg-blue rounded-xl p-2 card-pro  flex items-center justify-center align-middle">
+					Hello world 2
+			 	</div> -->

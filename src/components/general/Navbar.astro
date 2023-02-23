@@ -6,12 +6,11 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
 	{ label: 'Projects', href: '/work' },
 	{ label: 'About', href: '/about' },
-	{ label: 'Contact', href: '/about' },
 ];
 ---
 
 <nav
-  class="container flex items-center justify-around h-[80px] sm:h-[200px] sm:justify-center sm:flex-col mt-5 sm:mb-5"
+  class="container flex items-center justify-between h-[80px] sm:h-[200px] sm:justify-center sm:flex-col mt-5 sm:mb-5"
 >
   <img src={info.logo} class="object-contain h-20 w-30 sm:h-40 sm:w-50" />
   <ul class="nav-items dark:bg-[#202020] dark:text-light">

@@ -1,0 +1,20 @@
+---
+import { IHeroProps } from "@types";
+
+const { name, degree, about } = Astro.props as IHeroProps;
+---
+<div class="pb-12 mt-10 dark:text-light">
+  <div class="text-xl py-1 sm:text-center">Hi there 👋</div>
+  <div class="text-5xl font-bold mt-5 sm:text-center">
+    I'm <span class="text-gradient">{name}</span>
+  </div>
+  <div class="text-3xl py-3 font-bold">{degree}</div>
+  <div class="py-2">
+    <text class="text-lg">
+      I made this template for everyone who needs to create a personal website
+      easily and quickly. This template includes Project Section, CV Section,
+      Store, Paginated Blog, RSS Feed, SEO Friendly, Responsive Desing and 29
+      Visual themes. I hope you find it useful!
+    </text>
+  </div>
+</div>
