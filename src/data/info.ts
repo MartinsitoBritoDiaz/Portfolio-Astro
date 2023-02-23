@@ -4,5 +4,17 @@ export const info = {
   logoA: "/assets/logoA.gif",
   codeBackground: "/assets/codeBackground2.svg",
   name: "Martinsito Brito Diaz",
-  degree: "System Engineer"
+  degree: "System Engineer",
+  project: "/assets/images/project-music-festival.jpg",
+  work: {
+    projects: [
+      {
+        name: "",
+        description: "",
+        url: "",
+        liveSite: "",
+        image: "",
+      }
+    ]
+  }
 };
