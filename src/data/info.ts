@@ -6,6 +6,7 @@ export const info = {
   name: "Martinsito Brito Diaz",
   degree: "System Engineer",
   project: "/assets/images/project-music-festival.jpg",
+  technologies: ["HTML", "CSS", "JS", "SASS", "GULP"],
   work: {
     projects: [
       {
@@ -16,5 +17,8 @@ export const info = {
         image: "",
       }
     ]
-  }
+  },
+  github: "/assets/github.svg",
+  liveSite: "/assets/share.svg",
+  link: "",
 };

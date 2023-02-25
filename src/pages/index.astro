@@ -24,9 +24,50 @@ import Hero from "@components/home/Hero.astro";
 
 		<div class="h-100 w-full before:dark:bg-[#202020] child">
 			<h2 class="py-5 dark:text-light text-3xl font-bold text-center">Projects that I've been working on</h2>
-			<div class="flex items-center justify-between w-auto p-10 gap-x-10">
+			<div class="flex items-center justify-between w-auto p-10 dark:bg-[#202020] rounded-3xl">
 				<div class="">
-					<img src={info.project}/>
+					<img src={info.project} class="max-w-xl"/>
+				</div>
+				<div class="flex flex-col items-end text-right dark:text-light py-3 pl-2">
+					<p>Feature Project</p>
+					<h3 class="dark:text-light font-bold text-2xl">Music Festival</h3>
+					<p class="paragraph-card">Project Description Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate dolorem exercitationem harum repellendus sequi magnam maiores accusamus cum nemo beatae repudiandae, ipsa, voluptate sed doloribus. Eius ipsum minima nihil?</p>
+					<ul class="flex gap-4">
+						{
+							info.technologies.map((tech: string) => (
+								<li>{tech}</li>
+							))
+						}
+					</ul>
+					<div class="flex gap-x-2">
+						<div class="h-5 w-5 github-icon cursor-pointer ">
+							<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" class="dark:stroke-white stroke-black" fill="none" ><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+							<!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> -->
+						</div>
+						<div class="h-5 w-5 github-icon cursor-pointer ">
+							<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24" viewBox="0 0 256 256">
+
+								<defs>
+								</defs>
+								<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+									<path d="M 49.449 20.795 H 7.805 c -0.829 0 -1.5 -0.671 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 41.644 c 0.828 0 1.5 0.671 1.5 1.5 S 50.277 20.795 49.449 20.795 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 82.194 20.795 h -3.771 c -0.828 0 -1.5 -0.671 -1.5 -1.5 s 0.672 -1.5 1.5 -1.5 h 3.771 c 0.828 0 1.5 0.671 1.5 1.5 S 83.022 20.795 82.194 20.795 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 73.297 20.795 h -3.771 c -0.828 0 -1.5 -0.671 -1.5 -1.5 s 0.672 -1.5 1.5 -1.5 h 3.771 c 0.828 0 1.5 0.671 1.5 1.5 S 74.125 20.795 73.297 20.795 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 46.886 79.402 h -3.771 c -0.829 0 -1.5 -0.672 -1.5 -1.5 s 0.671 -1.5 1.5 -1.5 h 3.771 c 0.828 0 1.5 0.672 1.5 1.5 S 47.714 79.402 46.886 79.402 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 84.968 10.598 H 5.032 C 2.257 10.598 0 12.855 0 15.63 v 58.74 c 0 2.774 2.257 5.032 5.032 5.032 h 31.142 c 0.829 0 1.5 -0.672 1.5 -1.5 s -0.671 -1.5 -1.5 -1.5 H 5.032 C 3.912 76.402 3 75.49 3 74.37 V 26.743 h 84 V 74.37 c 0 1.12 -0.912 2.032 -2.032 2.032 H 53.825 c -0.828 0 -1.5 0.672 -1.5 1.5 s 0.672 1.5 1.5 1.5 h 31.143 c 2.774 0 5.032 -2.258 5.032 -5.032 V 15.63 C 90 12.855 87.742 10.598 84.968 10.598 z M 3 23.743 V 15.63 c 0 -1.121 0.912 -2.032 2.032 -2.032 h 79.936 c 1.12 0 2.032 0.912 2.032 2.032 v 8.113 H 3 z" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 45 68.488 c -9.136 0 -16.568 -7.432 -16.568 -16.567 S 35.864 35.353 45 35.353 s 16.568 7.433 16.568 16.568 S 54.136 68.488 45 68.488 z M 45 38.353 c -7.481 0 -13.568 6.087 -13.568 13.568 S 37.519 65.488 45 65.488 s 13.568 -6.086 13.568 -13.567 S 52.481 38.353 45 38.353 z" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path d="M 41.583 60.328 c -0.018 0 -0.035 0 -0.053 -0.001 c -0.426 -0.015 -0.826 -0.211 -1.099 -0.539 l -4.714 -5.657 c -0.53 -0.636 -0.444 -1.582 0.192 -2.112 c 0.638 -0.53 1.583 -0.445 2.113 0.192 l 3.642 4.369 L 52.05 45.769 c 0.575 -0.597 1.524 -0.616 2.121 -0.042 c 0.598 0.574 0.616 1.523 0.043 2.121 l -11.55 12.021 C 42.381 60.162 41.99 60.328 41.583 60.328 z" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+								</g>
+								</svg>					 -->
+
+								<svg  class="path-link dark:fill-white light:fill-black" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 100 256"  >
+										<path class="dark:stroke-white" d="M 86 34.303 c -2.209 0 -4 -1.791 -4 -4 V 8 H 59.697 c -2.209 0 -4 -1.791 -4 -4 s 1.791 -4 4 -4 H 86 c 2.209 0 4 1.791 4 4 v 26.303 C 90 32.512 88.209 34.303 86 34.303 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+										<path class="dark:stroke-white" d="M 33.395 60.604 c -1.024 0 -2.047 -0.391 -2.829 -1.172 c -1.562 -1.562 -1.562 -4.095 0 -5.656 L 83.172 1.171 c 1.561 -1.562 4.094 -1.562 5.656 0 c 1.563 1.563 1.563 4.095 0 5.657 L 36.224 59.433 C 35.442 60.214 34.418 60.604 33.395 60.604 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+										<path class="dark:stroke-white" d="M 75.128 90 H 14.872 C 6.671 90 0 83.328 0 75.128 V 14.872 C 0 6.671 6.671 0 14.872 0 h 18.523 c 2.209 0 4 1.791 4 4 s -1.791 4 -4 4 H 14.872 C 11.083 8 8 11.083 8 14.872 v 60.256 C 8 78.917 11.083 82 14.872 82 h 60.256 C 78.917 82 82 78.917 82 75.128 V 56.604 c 0 -2.209 1.791 -4 4 -4 s 4 1.791 4 4 v 18.523 C 90 83.328 83.328 90 75.128 90 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+								</svg>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

@@ -55,6 +55,39 @@
     height: 120px;
     width: 100%;
 }
+
+a:hover{
+  color: aquamarine;
+}
+
+.github-icon path, 
+.github-icon .path-link{
+  stroke-width: 2px;
+  transition: stroke 0.3s ease-in-out; /* add a smooth transition effect */
+}
+
+.github-icon:hover path {
+  stroke: aquamarine; 
+}
+
+.github-icon .path-link:hover{
+  stroke: aquamarine; 
+  fill: aquamarine;/* set the border color to black on hover */
+}
+
+.paragraph-card{
+}
+
+/* .paragraph-card:before {
+  height: 90vh;
+  width: 100%;
+  content: ' ';   
+  position: absolute;
+  left: 0;
+  z-index: -1;
+} */
+
+
 /* 
   .child {
     width: 100%;
