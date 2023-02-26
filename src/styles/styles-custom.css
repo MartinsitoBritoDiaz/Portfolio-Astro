@@ -88,6 +88,7 @@ align-items: center;
   .card-cont-1 .paragraph-card{
     background-color: var(--dark-green);
     border-radius: 0.2rem;
+    color: var(--accent-light);
   }
   
 }
@@ -110,7 +111,7 @@ align-items: center;
   }
   .card-cont-2{
   height: 100%;
-  opacity: 0.5;
+  opacity: .5;
   }
 
      .card-cont-1{
@@ -145,11 +146,11 @@ filter: blur(1px);
 
 @media (max-width: 800px) {
   .card-cont-2{
-    opacity: 0.5;
+    opacity: 0.2;
   }
 
   .img-p3 img{
-   filter: blur(1px) contrast(1) brightness(60%);
+   filter: blur(1px)  brightness(90%);
   }
 }
 /* .paragraph-card:before {

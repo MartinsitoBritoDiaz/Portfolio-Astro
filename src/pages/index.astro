@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { info } from "@data";
+import { IProject } from "@types";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "@config";
 import BaseHead from "@components/general/BaseHead.astro";
@@ -58,37 +59,71 @@ import Hero from "@components/home/Hero.astro";
 
 		<div class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green ">
 			<h2 class="py-5 dark:text-light text-dark-green text-4xl font-bold text-center my-10">Projects</h2>
-			<div class="mx-auto max-w-[800px]">
-				<div class="cont">
+			<div class="grid gap-y-10 mx-auto">
+				<!-- <div class="cont">
 					<div class="card-cont-2">
 						<div class="img-p3"><img src={info.project} class="img-p1 md:max-w-lg max-w-full"/></div>
 					</div>
-					<div class="card-cont-1 flex flex-col md:items-end sm:text-justify text-light ">
+					<div class="card-cont-1 flex flex-col md:items-end sm:text-justify text-light gap-y-2 ">
 						<p class="font-bold dark:text-light-green text-dark-green text-sm">Feature Project</p>
-						<h3 class="text-light font-bold text-2xl">Music Festival</h3>
-						<p class="paragraph-card my-2 p-5 sm:pl-0 max-w-lg">Project Description Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate dolorem exercitationem harum repellendus sequi magnam maiores accusamus cum nemo beatae repudiandae</p>
+						<h3 class="text-dark-green dark:text-light font-bold text-2xl">Music Festival</h3>
+						<p class="paragraph-card my-2 p-5 sm:pl-0 max-w-lg text-dark-green font-bold dark:text-light">Project Description Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate dolorem exercitationem harum repellendus sequi magnam maiores accusamus cum nemo beatae repudiandae</p>
 						<ul class="flex gap-4">
 							{
 								info.technologies.map((tech: string) => (
-									<li class="font-bold">{tech}</li>
+									<li class="font-bold text-dark-green dark:text-light">{tech}</li>
 								))
 							}
 						</ul>
 						<div class="flex gap-x-2">
-							<div class="h-5 w-5 github-icon cursor-pointer ">
-								<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" class="dark:stroke-light stroke-dark-green hover:stroke-white dark:hover:stroke-[#878b80]" fill="none" ><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+							<div class="h-10 w-10 github-icon cursor-pointer ">
+								<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 30 30" class="dark:stroke-light stroke-dark-green hover:stroke-[#009644] dark:hover:stroke-[#878b80]" fill="none" ><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 							</div>
-							<div class="h-5 w-5 github-icon cursor-pointer ">
-								<svg  class="path-link hover:fill-[#3d403a] dark:hover:fill-[#878b80] hover:stroke-[#3d403a] dark:hover:stroke-[#878b80] fill-white light:fill-black" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 100 256"  >
-									<path class="stroke-white " d="M 86 34.303 c -2.209 0 -4 -1.791 -4 -4 V 8 H 59.697 c -2.209 0 -4 -1.791 -4 -4 s 1.791 -4 4 -4 H 86 c 2.209 0 4 1.791 4 4 v 26.303 C 90 32.512 88.209 34.303 86 34.303 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-									<path class="stroke-white " d="M 33.395 60.604 c -1.024 0 -2.047 -0.391 -2.829 -1.172 c -1.562 -1.562 -1.562 -4.095 0 -5.656 L 83.172 1.171 c 1.561 -1.562 4.094 -1.562 5.656 0 c 1.563 1.563 1.563 4.095 0 5.657 L 36.224 59.433 C 35.442 60.214 34.418 60.604 33.395 60.604 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-									<path class="stroke-white " d="M 75.128 90 H 14.872 C 6.671 90 0 83.328 0 75.128 V 14.872 C 0 6.671 6.671 0 14.872 0 h 18.523 c 2.209 0 4 1.791 4 4 s -1.791 4 -4 4 H 14.872 C 11.083 8 8 11.083 8 14.872 v 60.256 C 8 78.917 11.083 82 14.872 82 h 60.256 C 78.917 82 82 78.917 82 75.128 V 56.604 c 0 -2.209 1.791 -4 4 -4 s 4 1.791 4 4 v 18.523 C 90 83.328 83.328 90 75.128 90 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+							<div class="h-10 w-10 github-icon cursor-pointer ">
+								<svg  class="path-link dark:stroke-light stroke-dark-green hover:fill-[#009644] dark:hover:fill-[#878b80] hover:stroke-[#009644] dark:hover:stroke-[#878b80] fill-dark-green dark:fill-light " xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 130 256"  >
+									<path class=" " d="M 86 34.303 c -2.209 0 -4 -1.791 -4 -4 V 8 H 59.697 c -2.209 0 -4 -1.791 -4 -4 s 1.791 -4 4 -4 H 86 c 2.209 0 4 1.791 4 4 v 26.303 C 90 32.512 88.209 34.303 86 34.303 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path class=" " d="M 33.395 60.604 c -1.024 0 -2.047 -0.391 -2.829 -1.172 c -1.562 -1.562 -1.562 -4.095 0 -5.656 L 83.172 1.171 c 1.561 -1.562 4.094 -1.562 5.656 0 c 1.563 1.563 1.563 4.095 0 5.657 L 36.224 59.433 C 35.442 60.214 34.418 60.604 33.395 60.604 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+									<path class=" " d="M 75.128 90 H 14.872 C 6.671 90 0 83.328 0 75.128 V 14.872 C 0 6.671 6.671 0 14.872 0 h 18.523 c 2.209 0 4 1.791 4 4 s -1.791 4 -4 4 H 14.872 C 11.083 8 8 11.083 8 14.872 v 60.256 C 8 78.917 11.083 82 14.872 82 h 60.256 C 78.917 82 82 78.917 82 75.128 V 56.604 c 0 -2.209 1.791 -4 4 -4 s 4 1.791 4 4 v 18.523 C 90 83.328 83.328 90 75.128 90 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 								</svg>
 							</div>
 						</div>
 	
 					</div>
-				</div>
+				</div> -->
+				{
+					info.work.projects.slice(0,3).map((project) => (
+						<div class="cont">
+							<div class="card-cont-2">
+								<div class="img-p3"><img src={project.image} class="img-p1 md:max-w-lg max-w-full" alt={project.name}/></div>
+							</div>
+							<div class="card-cont-1 flex flex-col md:items-end sm:text-justify text-light gap-y-2 ">
+								<p class="font-bold dark:text-light-green text-dark-green text-sm">Feature Project</p>
+								<h3 class="text-dark-green dark:text-light font-bold text-2xl">{project.name}</h3>
+								<p class="paragraph-card my-2 p-5 sm:pl-0 max-w-lg text-dark-green font-bold dark:text-light">{project.description}</p>
+								<ul class="flex gap-4">
+									{
+										project.technologies.map((tech: string) => (
+											<li class="font-bold text-dark-green dark:text-light">{tech.toUpperCase()}</li>
+										))
+									}
+								</ul>
+								<div class="flex gap-x-2">
+									<a class="h-8 w-8 github-icon cursor-pointer " href={project.code} target="_blank">
+										<svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 30 30" class="dark:stroke-light stroke-dark-green hover:stroke-[#009644] dark:hover:stroke-[#878b80]" fill="none" ><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+									</a>
+									<a class="h-8 w-8 github-icon cursor-pointer " href={project.liveSite} target="_blank">
+										<svg  class="path-link dark:stroke-light stroke-dark-green hover:fill-[#009644] dark:hover:fill-[#878b80] hover:stroke-[#009644] dark:hover:stroke-[#878b80] fill-dark-green dark:fill-light " xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 130 256"  >
+											<path class=" " d="M 86 34.303 c -2.209 0 -4 -1.791 -4 -4 V 8 H 59.697 c -2.209 0 -4 -1.791 -4 -4 s 1.791 -4 4 -4 H 86 c 2.209 0 4 1.791 4 4 v 26.303 C 90 32.512 88.209 34.303 86 34.303 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+											<path class=" " d="M 33.395 60.604 c -1.024 0 -2.047 -0.391 -2.829 -1.172 c -1.562 -1.562 -1.562 -4.095 0 -5.656 L 83.172 1.171 c 1.561 -1.562 4.094 -1.562 5.656 0 c 1.563 1.563 1.563 4.095 0 5.657 L 36.224 59.433 C 35.442 60.214 34.418 60.604 33.395 60.604 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+											<path class=" " d="M 75.128 90 H 14.872 C 6.671 90 0 83.328 0 75.128 V 14.872 C 0 6.671 6.671 0 14.872 0 h 18.523 c 2.209 0 4 1.791 4 4 s -1.791 4 -4 4 H 14.872 C 11.083 8 8 11.083 8 14.872 v 60.256 C 8 78.917 11.083 82 14.872 82 h 60.256 C 78.917 82 82 78.917 82 75.128 V 56.604 c 0 -2.209 1.791 -4 4 -4 s 4 1.791 4 4 v 18.523 C 90 83.328 83.328 90 75.128 90 z"  transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+										</svg>
+									</a>
+								</div>
+			
+							</div>
+						</div>
+					))
+				}
 			</div>
 		</div>
     </Layout>

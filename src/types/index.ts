@@ -9,3 +9,13 @@ export interface IHeroProps {
     degree: string;
     about: string;
 }
+
+export interface IProject {
+    name: string,
+    description: string,
+    technologies: string,
+    url: string,
+    code: string,
+    liveSite: string,
+    image: string,
+}
