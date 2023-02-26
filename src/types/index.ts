@@ -13,7 +13,8 @@ export interface IHeroProps {
 export interface IProject {
     name: string,
     description: string,
-    technologies: string,
+    technologies: string[],
+    isDeploy: boolean,
     url: string,
     code: string,
     liveSite: string,
