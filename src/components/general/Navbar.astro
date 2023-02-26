@@ -13,7 +13,7 @@ const textLinks: { label: string; href: string }[] = [
   class="container flex items-center justify-between h-[80px] sm:h-[200px] sm:justify-center sm:flex-col mt-5 sm:mb-5"
 >
   <img src={info.logo} class="object-contain h-20 w-30 sm:h-40 sm:w-50" />
-  <ul class="nav-items dark:bg-[#202020] dark:text-light">
+  <ul class="nav-items dark:bg-[#202020] dark:text-light ">
     {
       textLinks.map(({ label, href }) => (
         <li>
@@ -41,22 +41,22 @@ const textLinks: { label: string; href: string }[] = [
       <button
         aria-label="theme-button"
         id="theme-button"
-        class="dark:text-light rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020] sm:hidden"
+        class="dark:text-light rounded-lg p-4 ml-2 bg-[#3d403a] dark:bg-[#202020] sm:hidden"
       ></button>
     </li>
   </ul>
 </nav>
 
 <div  
- class="fixed bottom-4 right-4" aria-label="float-button-container" >
+ class="fixed bottom-4 right-4 z-10" aria-label="float-button-container" >
   <button aria-label="theme-button"
-  id="theme-button-mobile"class="dark:text-light rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020]  hidden sm:block">
+  id="theme-button-mobile"class="dark:text-light rounded-lg p-4 ml-2 bg-[#3d403a] dark:bg-[#202020]  hidden sm:block">
   </button>
 </div>
 
 
 <script is:inline>
-  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
   const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const themeButton = document.getElementById("theme-button");
   const themeButtonMobile = document.getElementById("theme-button-mobile");

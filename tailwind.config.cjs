@@ -6,18 +6,24 @@ module.exports = {
     extend: {
       colors: {
         dark: "#111111",
-        light: " #f0f3f4 ",
-        blue: "#33d2ff",
-        gray: "#f0f3f4 ",
+        light: " #f1eeea",
+        "light-text": "#ffffff",
+        "light-green": "#878b80",
+        "dark-green": "#3d403a",
+        // blue: "#60a4bf",
+        blue: "#3d403a",
+        "dark-blue": "#012e40",
         "dark-gray": "#f0f3f4 ",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        outfit: ["Outfit", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+        // inter: ["Inter", "sans-serif"],
+        // outfit: ["Outfit", "sans-serif"],
       },
     },
     screens: {
       'sm': {'max': '800px'},
+      'md': {'min': '800px'},
       // => @media (max-width: 639px) { ... }
     }
   },

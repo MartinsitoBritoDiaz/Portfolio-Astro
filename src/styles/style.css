@@ -4,11 +4,13 @@
 
 :root {
 
-	--accent-light: #c561f6;
-	--accent-regular: #33d2ff;
+	--accent-light: #f1eeea;
+	--accent-regular: #3d403a;
+	--light-green: #878b80;
 	--accent-dark: #1c0056;
 	--accent-overlay: #33d2ff;
 	--accent-subtle-overlay: var(--accent-overlay);
+	--dark-green: #3d403a;
 
 	--link-color: var(--accent-regular);
 
@@ -66,25 +68,27 @@
 
 @layer components {
   body {
-    @apply bg-light dark:bg-dark;
+    @apply bg-light dark:bg-dark font-nunito;
   }
   .container {
     @apply max-w-[1280px] mx-auto px-20;
   }
-}
-  /* .container {
-    @apply max-w-[1112px] mx-auto px-4;
+  .container-sm{
+	@apply max-w-[1080px] mx-auto px-20;
+	
   }
-  h1,
+}
+
+  /* h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-outfit;
+    @apply font-nunito;
   }
   h1 {
-    @apply text-6xl sm:text-8xl main-heading;
+    @apply text-6xl sm:text-8xl;
   }
   h2 {
     @apply text-xl font-semibold;
@@ -92,9 +96,8 @@
   p,
   li,
   a {
-    @apply font-inter text-dark-gray;
+    @apply font-nunito text-dark-gray;
   }
   .footer-icons {
     @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
-  }
-} */
+  } */
