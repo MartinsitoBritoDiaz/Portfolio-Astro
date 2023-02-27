@@ -57,6 +57,15 @@
     "unist-util-visit" "^4.1.0"
     "vfile" "^5.3.2"
 
+"@astrojs/netlify@^2.1.3":
+  "integrity" "sha512-DILtrApsMayUSO+9HM6lxawiB8zSjpL4QIhuaye81lha41fJUvfyM7gACJgKFplKvhce1cNCCd0g8Emv1BFnNw=="
+  "resolved" "https://registry.npmjs.org/@astrojs/netlify/-/netlify-2.1.3.tgz"
+  "version" "2.1.3"
+  dependencies:
+    "@astrojs/webapi" "^2.0.1"
+    "@netlify/functions" "^1.0.0"
+    "esbuild" "^0.15.18"
+
 "@astrojs/prism@^2.0.0":
   "integrity" "sha512-YgeoeEPqsxaEpg0rwe/bUq3653LqSQnMjrLlpYwrbQQMQQqz6Y5yXN+RX3SfLJ6ppNb4+Fu2+Z49EXjk48Ihjw=="
   "resolved" "https://registry.npmjs.org/@astrojs/prism/-/prism-2.0.0.tgz"
@@ -82,10 +91,10 @@
     "postcss" "^8.4.14"
     "postcss-load-config" "^4.0.1"
 
-"@astrojs/telemetry@^2.0.0":
-  "integrity" "sha512-RnWojVMIsql3GGWDP5pNWmhmBQVkCpxGNZ8yPr2cbmUqsUYGSvErhqfkLfro9j2/STi5UDmSpNgjPkQmXpgnKw=="
-  "resolved" "https://registry.npmjs.org/@astrojs/telemetry/-/telemetry-2.0.0.tgz"
-  "version" "2.0.0"
+"@astrojs/telemetry@^2.0.1":
+  "integrity" "sha512-68BLBb9CcvQMkWHE6h6VTgm5g6agm3+xm8eb3cdkmX9nP1LSQ/fiD49Jb1qAgCtWcY8yQJiWQQXwcdyStD+VoA=="
+  "resolved" "https://registry.npmjs.org/@astrojs/telemetry/-/telemetry-2.0.1.tgz"
+  "version" "2.0.1"
   dependencies:
     "ci-info" "^3.3.1"
     "debug" "^4.3.4"
@@ -93,15 +102,15 @@
     "dset" "^3.1.2"
     "is-docker" "^3.0.0"
     "is-wsl" "^2.2.0"
-    "undici" "^5.14.0"
+    "undici" "^5.20.0"
     "which-pm-runs" "^1.1.0"
 
-"@astrojs/webapi@^2.0.1":
-  "integrity" "sha512-aOOHa86W5Ux77A3dS91YrVlSxtBSJsVK4UhvcXHY0gAl0ZrOStSKSBO45gZ6tFi2AiHu3bzpMtZjwrPHtl+cyg=="
-  "resolved" "https://registry.npmjs.org/@astrojs/webapi/-/webapi-2.0.1.tgz"
-  "version" "2.0.1"
+"@astrojs/webapi@^2.0.1", "@astrojs/webapi@^2.0.2":
+  "integrity" "sha512-uSNtxLuvCWOcwy/DdIy30ocIcIUedEZpyhn1MHW3XuZ3PZHg4PMej3EP38Ns6uKgDKqMyEdscca9bMLuf4cO/w=="
+  "resolved" "https://registry.npmjs.org/@astrojs/webapi/-/webapi-2.0.2.tgz"
+  "version" "2.0.2"
   dependencies:
-    "undici" "5.18.0"
+    "undici" "5.20.0"
 
 "@babel/code-frame@^7.18.6":
   "integrity" "sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q=="
@@ -383,6 +392,13 @@
   "resolved" "https://registry.npmjs.org/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.2.tgz"
   "version" "0.0.2"
 
+"@netlify/functions@^1.0.0":
+  "integrity" "sha512-gy7ULTIRroc2/jyFVGx1djCmmBMVisIwrvkqggq5B6iDcInRSy2Tpkm+V5C63hKJVkNRskKWtLQKm9ecCaQTjA=="
+  "resolved" "https://registry.npmjs.org/@netlify/functions/-/functions-1.4.0.tgz"
+  "version" "1.4.0"
+  dependencies:
+    "is-promise" "^4.0.0"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -647,16 +663,16 @@
   "resolved" "https://registry.npmjs.org/array-iterate/-/array-iterate-2.0.1.tgz"
   "version" "2.0.1"
 
-"astro@^2.0.14", "astro@^2.0.2", "astro@^2.0.4":
-  "integrity" "sha512-BiXnHyK3rj5Uz45V5p9jRi0xtJc/zxhCxnXYAekHHF1bVvvoa3aXMwl0GZ3Bc0mxP6vPLmbRcjNKdqfyZn1B3Q=="
-  "resolved" "https://registry.npmjs.org/astro/-/astro-2.0.14.tgz"
-  "version" "2.0.14"
+"astro@^2.0.15", "astro@^2.0.16", "astro@^2.0.2", "astro@^2.0.4":
+  "integrity" "sha512-noQL+bbBZaCLbh7wmpVON+e4kDxymDsIQkEUzzuMKLQodYynxr/Sp7RBA/JnEqXz4CRyd7IrgeQBN0cKOuBtzQ=="
+  "resolved" "https://registry.npmjs.org/astro/-/astro-2.0.16.tgz"
+  "version" "2.0.16"
   dependencies:
     "@astrojs/compiler" "^1.1.0"
     "@astrojs/language-server" "^0.28.3"
     "@astrojs/markdown-remark" "^2.0.1"
-    "@astrojs/telemetry" "^2.0.0"
-    "@astrojs/webapi" "^2.0.1"
+    "@astrojs/telemetry" "^2.0.1"
+    "@astrojs/webapi" "^2.0.2"
     "@babel/core" "^7.18.2"
     "@babel/generator" "^7.18.2"
     "@babel/parser" "^7.18.4"
@@ -1066,6 +1082,39 @@
   "integrity" "sha512-n3ruqU8Te7I5prBd6d0darM8ajFuVNhLWvgo04hN7goWSaSrxe7ENOZitac7akN0A2o+8fMomBDsNPvW/eE3CQ=="
   "resolved" "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-1.1.1.tgz"
   "version" "1.1.1"
+
+"esbuild-windows-64@0.15.18":
+  "integrity" "sha512-qinug1iTTaIIrCorAUjR0fcBk24fjzEedFYhhispP8Oc7SFvs+XeW3YpAKiKp8dRpizl4YYAhxMjlftAMJiaUw=="
+  "resolved" "https://registry.npmjs.org/esbuild-windows-64/-/esbuild-windows-64-0.15.18.tgz"
+  "version" "0.15.18"
+
+"esbuild@^0.15.18":
+  "integrity" "sha512-x/R72SmW3sSFRm5zrrIjAhCeQSAWoni3CmHEqfQrZIQTM3lVCdehdwuIqaOtfC2slvpdlLa62GYoN8SxT23m6Q=="
+  "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.15.18.tgz"
+  "version" "0.15.18"
+  optionalDependencies:
+    "@esbuild/android-arm" "0.15.18"
+    "@esbuild/linux-loong64" "0.15.18"
+    "esbuild-android-64" "0.15.18"
+    "esbuild-android-arm64" "0.15.18"
+    "esbuild-darwin-64" "0.15.18"
+    "esbuild-darwin-arm64" "0.15.18"
+    "esbuild-freebsd-64" "0.15.18"
+    "esbuild-freebsd-arm64" "0.15.18"
+    "esbuild-linux-32" "0.15.18"
+    "esbuild-linux-64" "0.15.18"
+    "esbuild-linux-arm" "0.15.18"
+    "esbuild-linux-arm64" "0.15.18"
+    "esbuild-linux-mips64le" "0.15.18"
+    "esbuild-linux-ppc64le" "0.15.18"
+    "esbuild-linux-riscv64" "0.15.18"
+    "esbuild-linux-s390x" "0.15.18"
+    "esbuild-netbsd-64" "0.15.18"
+    "esbuild-openbsd-64" "0.15.18"
+    "esbuild-sunos-64" "0.15.18"
+    "esbuild-windows-32" "0.15.18"
+    "esbuild-windows-64" "0.15.18"
+    "esbuild-windows-arm64" "0.15.18"
 
 "esbuild@^0.16.14":
   "integrity" "sha512-G8LEkV0XzDMNwXKgM0Jwu3nY3lSTwSGY6XbxM9cr9+s0T/qSV1q1JVPBGzm3dcjhCic9+emZDmMffkwgPeOeLg=="
@@ -1483,6 +1532,11 @@
   "integrity" "sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg=="
   "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-4.1.0.tgz"
   "version" "4.1.0"
+
+"is-promise@^4.0.0":
+  "integrity" "sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ=="
+  "resolved" "https://registry.npmjs.org/is-promise/-/is-promise-4.0.0.tgz"
+  "version" "4.0.0"
 
 "is-stream@^3.0.0":
   "integrity" "sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA=="
@@ -2885,17 +2939,10 @@
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
   "version" "4.9.5"
 
-"undici@^5.14.0":
+"undici@^5.20.0", "undici@5.20.0":
   "integrity" "sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g=="
   "resolved" "https://registry.npmjs.org/undici/-/undici-5.20.0.tgz"
   "version" "5.20.0"
-  dependencies:
-    "busboy" "^1.6.0"
-
-"undici@5.18.0":
-  "integrity" "sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA=="
-  "resolved" "https://registry.npmjs.org/undici/-/undici-5.18.0.tgz"
-  "version" "5.18.0"
   dependencies:
     "busboy" "^1.6.0"
 
