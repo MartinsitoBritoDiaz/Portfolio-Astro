@@ -5,8 +5,8 @@ export const info = {
   codeBackground: "/assets/codeBackground2.svg",
   name: "Martinsito Brito Diaz",
   degree: "System Engineer",
-  project: "/assets/images/project-music-festival.jpg",
-  technologies: ["HTML", "CSS", "JS", "SASS", "GULP"],
+  "short-description": "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. ",
+  description: "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
   work: {
     projects: [
       {
@@ -52,7 +52,9 @@ export const info = {
       
     ]
   },
-  github: "/assets/github.svg",
-  liveSite: "/assets/share.svg",
-  link: "",
+  contact: {
+    twitter: "https://twitter.com/martinbd09",
+    instagram: "https://www.instagram.com/martinbd09/",
+    github: "https://github.com/MartinsitoBritoDiaz",
+  },
 };

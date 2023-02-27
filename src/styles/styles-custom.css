@@ -153,6 +153,13 @@ filter: blur(1px);
    filter: blur(1px)  brightness(90%);
   }
 }
+
+@media (min-width: 800px) {
+  .img-p3 img{
+   filter: none;
+  }
+}
+
 /* .paragraph-card:before {
   height: 90vh;
   width: 100%;
