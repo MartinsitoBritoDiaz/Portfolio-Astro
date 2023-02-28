@@ -10,6 +10,18 @@ export interface IHeroProps {
     about: string;
 }
 
+export interface IHomeProjectsProps {
+    projects: [];
+}
+
+export interface IFooterProps {
+    contact: {
+        instagram: string,
+        github: string,
+        twitter: string,
+    };
+}
+
 export interface IProject {
     name: string,
     description: string,

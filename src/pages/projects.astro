@@ -5,8 +5,7 @@ import { info } from "@data";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@config";
 import BaseHead from "@components/general/BaseHead.astro";
 import Hero from "@components/home/Hero.astro";
-import HomeProjects from "@components/home/HomeProjects.astro";
-import Footer from "@components/general/Footer.astro";
+import { Project } from "@components";
 
 
 
@@ -20,11 +19,7 @@ import Footer from "@components/general/Footer.astro";
 
   <body>
     <Layout>
-      <Hero name={info.name.split(" ")[0]} degree={info.degree} about={info["short-description"]} />
-
-      <HomeProjects projects={info.work.projects} />
-    
-      <Footer contact={info.contact} />
+      <h1 class="text-light font-bold text-3xl">Projects</h1>
     </Layout>
   </body>
 </html>

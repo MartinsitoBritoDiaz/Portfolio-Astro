@@ -1,17 +1,23 @@
 ---
+import { info } from "@data";
 import { IHeroProps } from "@types";
 
 const { name, degree, about } = Astro.props as IHeroProps;
 ---
-<div class="pb-12 mt-10 dark:text-light">
-  <div class="text-xl py-1 ">Hi there 👋</div>
-  <div class="text-5xl font-bold mt-5">
-    I'm <span class="text-gradient">{name}</span>
+<div class="md:flex">
+  <div class="mt-10 dark:text-light md:flex-1">
+    <div class="text-xl py-1 ">Hi there 👋</div>
+    <div class="text-5xl font-bold mt-5">
+      I'm <span class="text-gradient">{name}</span>
+    </div>
+    <div class="text-3xl py-3 font-bold">{degree}</div>
+    <div class="py-2">
+      <text class="text-lg">
+        {about}
+      </text>
+    </div>
   </div>
-  <div class="text-3xl py-3 font-bold">{degree}</div>
-  <div class="py-2">
-    <text class="text-lg">
-      {about}
-    </text>
+  <div class=" md:flex-1 flex items-center justify-center">
+    <img src={info.codeBackground} class="h-70 w-60 my-10" />
   </div>
 </div>
