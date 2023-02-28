@@ -164,6 +164,18 @@ filter: blur(1px);
   }
 }
 
+.box-shadow-d{
+  
+ border-radius: 30px;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+}
+
+.per{
+  
+  border: none;
+  box-shadow: var(--shadow-md);
+}
 /* .paragraph-card:before {
   height: 90vh;
   width: 100%;
