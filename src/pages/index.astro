@@ -22,9 +22,7 @@ import Footer from "@components/general/Footer.astro";
     <Layout>
       <Hero name={info.name.split(" ")[0]} degree={info.degree} about={info["short-description"]} />
 
-      <HomeProjects projects={info.work.projects} />
-    
-      <Footer contact={info.contact} />
+      <HomeProjects projects={info.work.projects} />    
     </Layout>
   </body>
 </html>

@@ -57,6 +57,6 @@ export const info = {
     instagram: "https://www.instagram.com/martinbd09/",
     github: "https://github.com/MartinsitoBritoDiaz",
   },
-  image: "/assets/images/project-blog-cafe.jpg",
+  image: "/assets/images/project-music-festival.jpg",
 
 };
