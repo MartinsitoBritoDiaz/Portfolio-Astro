@@ -55,7 +55,7 @@ export const info = {
         technologies: ["React", "TS", "HTML", "Bootstrap", "Css"],
         url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
         code: "https://github.com/MartinsitoBritoDiaz/HeroesReactApp",
-        liveSite: "https://heroesapp-martinsito.netlify.app/login",
+        liveSite: "https://heroesapp-martinsito.netlify.app/",
         isDeploy: true,
         image: "/assets/images/project-heroes.jpg",
       },
