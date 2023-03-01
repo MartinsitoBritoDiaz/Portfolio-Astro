@@ -49,6 +49,105 @@ export const info = {
         isDeploy: true,
         image: "/assets/images/project-advice-generator.jpg",
       },
+      {
+        name: "Heroes",
+        description: "Web site about some super heroes, It was my first time using react router. ",
+        technologies: ["React", "TS", "HTML", "Bootstrap", "Css"],
+        url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
+        code: "https://github.com/MartinsitoBritoDiaz/HeroesReactApp",
+        liveSite: "https://heroesapp-martinsito.netlify.app/login",
+        isDeploy: true,
+        image: "/assets/images/project-heroes.jpg",
+      },
+      {
+        name: "News Website Homepage",
+        description: "News landing page, this project was built in HTML, CSS. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/News-HomePage",
+        liveSite: "https://news-homepage-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/project-landing-news-page.jpg",
+      },
+      {
+        name: "FAQ Accordin Card",
+        description: "FAQ component, when I made this project I was practicing JS. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Faq-Accordion-Card",
+        liveSite: "https://martinsitobritodiaz.github.io/Faq-Accordion-Card/",
+        isDeploy: true,
+        image: "/assets/images/project-faq-according-card.jpg",
+      },
+      
+      {
+        name: "Interactive Rating Component",
+        description: "Interactive Rating Component. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Interactive-Rating--Component",
+        liveSite: "https://martinsitobritodiaz.github.io/Interactive-Rating--Component/",
+        isDeploy: true,
+        image: "/assets/images/interactive-rating-component.jpg",
+      },
+
+      
+      {
+        name: "Product Preview Card",
+        description: "Product Preview Card. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/ProductPreviewCardComponent",
+        liveSite: "https://productpreviewcardmbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/product-preview-card-component.jpg",
+      },
+
+      
+      {
+        name: "Social Proof Section",
+        description: "Social Proof Section. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Social-Proof-Section",
+        liveSite: "https://martinsitobritodiaz.github.io/Social-Proof-Section/",
+        isDeploy: true,
+        image: "/assets/images/social-proof-component.jpg",
+      },
+
+      {
+        name: "Intro SignUp Form",
+        description: "Intro SignUp Form. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Intro-Component-With-Signup-Form",
+        liveSite: "https://intro-component-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/signup-form-component.jpg",
+      },
+
+      {
+        name: "Coming Soon Ping",
+        description: "Coming Soon Ping. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Coming-Soon-Page",
+        liveSite: "https://coming-soon-ping-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/coming-soon-ping-project.jpg",
+      },
+
+      {
+        name: "NFT Card Component",
+        description: "NFT Card Component. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/Nft-Preview-Card-Component",
+        liveSite: "https://nft-card-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/nft-card-component.jpg",
+      },
+      
       
     ]
   },
