@@ -81,6 +81,17 @@ export const info = {
       },
       
       {
+        name: "Front End Store",
+        description: "Landing page about a cloth store. ",
+        technologies: ["HTML", "CSS", "JS"],
+        url: "",
+        code: "https://github.com/MartinsitoBritoDiaz/FrontEndStore",
+        liveSite: "https://stingfrontendstore.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/project-frontend-store.png",
+      },
+      
+      {
         name: "Interactive Rating Component",
         description: "Interactive Rating Component. ",
         technologies: ["HTML", "CSS", "JS"],
@@ -147,6 +158,7 @@ export const info = {
         isDeploy: true,
         image: "/assets/images/nft-card-component.jpg",
       },
+
       
       
     ]
