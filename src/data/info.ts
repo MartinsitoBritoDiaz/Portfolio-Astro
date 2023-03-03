@@ -40,6 +40,17 @@ export const info = {
         image: "/assets/images/project-music-festival.jpg",
       },
       {
+        name: "Journal Web App",
+        description: "Web App where you can save your daily notes about food, excersices and more information.",
+        technologies: ["React", "JS", "mui", "API", "Firebase"],
+        url: "https://www.udemy.com/course/react-cero-experto/",
+        code: "https://github.com/MartinsitoBritoDiaz/Journal-React-MUI",
+        liveSite: "https://journalapp-omega.vercel.app/",
+        isDeploy: true,
+        image: "/assets/images/project-journal-app.png",
+      },
+
+      {
         name: "Advice Generator",
         description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
         technologies: ["HTML", "CSS", "JS", "API"],
