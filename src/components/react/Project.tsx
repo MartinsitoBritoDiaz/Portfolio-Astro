@@ -16,6 +16,7 @@ export const Project = (props: myComponent) => {
           src={props.project.image}
           className="img-p1 md:max-w-lg max-w-full"
           alt={props.project.name}
+          loading="lazy"
         />
       </div>
     </div>
