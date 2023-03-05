@@ -7,6 +7,7 @@ export const info = {
   degree: "System Engineer",
   "short-description": "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. ",
   description: "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
+  profile: "/assets/images/profile-foto.jpeg",
   work: {
     projects: [
       {

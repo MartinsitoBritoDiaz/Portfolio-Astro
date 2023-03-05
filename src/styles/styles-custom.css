@@ -16,13 +16,13 @@
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 10rem;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s var(--theme-transition);
 }
 .link.active,
 .link:hover,
 .link:focus {
   background-color: var(--accent-regular);
-color: var(--accent-light);
+  color: var(--accent-light);
 }
 
 @media (min-width: 50em) {

@@ -1,44 +1,153 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 import { info } from "@data";
-
-import { SITE_TITLE, SITE_DESCRIPTION } from "@config";
-import BaseHead from "@components/general/BaseHead.astro";
-import Hero from "@components/home/Hero.astro";
-import HomeProjects from "@components/home/HomeProjects.astro";
-import Footer from "@components/general/Footer.astro";
-
-
-
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<MainLayout>
+  <h1 class="text-dark dark:text-light font-bold text-3xl">About me</h1>
 
-  <body>
-    <Layout>
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="https://formbold.com/s/3nQx5" method="POST">
-        <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="email">
-            Your email:
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name="email" placeholder="Enter your email">
+  <div class="flex sm:flex-col-reverse">
+    <div class="md:flex-1">
+  
+      <div class="my-10">
+        <h3 class="text-dark dark:text-light font-bold text-xl">Who am I?</h3>
+    
+        <div class="text-dark dark:text-light my-5 flex gap-y-5">
+          <div class="ml-8">
+            <p class="  text-lg">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities. </p>
+          </div>
         </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 font-bold mb-2" for="message">
-            Your message:
-          </label>
-          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" name="message" placeholder="Enter your message"></textarea>
+    
+        <h3 class="text-dark dark:text-light font-bold text-xl">Hobbies</h3>
+    
+        <div class="text-dark dark:text-light my-5 flex gap-y-5">
+          <div class="ml-8">
+            <p class="  text-lg">I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. I am 22 years old, at the age of fourteen, it was my first time using technology while I was at highschool, since that time I have been loving this area. </p>
+          </div>
         </div>
-        <div class="flex items-center justify-center">
-          <button class="bg-dark-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-            Send
-          </button>
+        
+      </div>
+    </div>
+    <div class="md:flex-1 flex items-center justify-center">
+      <img width="100" height="100" src={info.profile} class="h-72 w-72 my-10 rounded-full" alt="Coding image" />
+    </div>
+  </div>
+
+  <div class="my-8">
+    <h3 class="text-dark dark:text-light font-bold text-xl">Education</h3>
+
+    <div class="text-dark dark:text-light my-2 flex ">
+      <!-- <div class="border border-l border-dark-green border-2 h-13"> -->
+      <div class="ml-8">
+        <p class="font-bold text-lg">System Engineer</p>
+        <h3 class=" font-bold text-lg">Universidad Católica Nordestana<span class="font-light text-sm pl-3">2017 - 2021</span></h3>
+      </div>
+    </div>
+      
+  </div>
+
+  <div class="my-8">
+    <h3 class="text-dark dark:text-light font-bold text-xl">Experience</h3>
+
+    <div class="text-dark dark:text-light my-5 flex gap-y-5">
+      <div class="border border-l border-dark-green border-2 h-20">
+        
+      </div>
+      <div class="ml-8">
+      <p class="font-bold text-lg">System Engineer Jr.</p>
+        <h3 class=" font-bold text-lg">Camsoft SRL <span class="font-light text-sm pl-3">Oct. 2022 - Currently</span></h3>
+        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+      </div>
+    </div>
+
+    <div class="text-dark dark:text-light my-5 flex gap-y-5">
+      <div class="border border-l border-dark-green border-2 h-20">
+        
+      </div>
+      <div class="ml-8">
+        <p class="font-bold text-lg">Web Developer (Internship)</p>
+        <h3 class=" font-bold text-lg">Soluciones Almonte Gil<span class="font-light text-sm pl-3">Jan. 2021 - May. 2021</span></h3>
+        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+      </div>
+    </div>
+
+    <div class="text-dark dark:text-light my-5 flex gap-y-5">
+      <div class="border border-l border-dark-green border-2 h-20">
+        
+      </div>
+      <div class="ml-8">
+        <p class="font-bold text-lg">Back End (Internship)</p>
+        <h3 class=" font-bold text-lg">Univerisdad Católica Nordestana <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>
+
+        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="my-8">
+      <h3 class="text-dark dark:text-light font-bold text-xl">Certifications & Courses</h3>
+  
+      <div class="text-dark dark:text-light my-5 flex gap-y-5">
+        <div class="border border-l border-dark-green border-2 h-20">
+          
         </div>
-      </form>
-    </Layout>
-  </body>
-</html>
+        <div class="ml-8">
+          <p class="font-bold text-lg">Responsive Web Design</p>
+          <h3 class=" font-bold text-lg">FreeCodeCamp <span class="font-light text-sm pl-3">Oct. 2022 - Currently</span></h3>
+        </div>
+      </div>
+  
+      <div class="text-dark dark:text-light my-5 flex gap-y-5">
+        <div class="border border-l border-dark-green border-2 h-16"></div>
+        <div class="ml-8">
+          <p class="font-bold text-lg">Technical Support</p>
+          <h3 class=" font-bold text-lg">Google - Coursera<span class="font-light text-sm pl-3">Jan. 2021 - May. 2021</span></h3>
+        </div>
+      </div>
+  
+      <div class="text-dark dark:text-light my-5 flex gap-y-5">
+        <div class="border border-l border-dark-green border-2 h-20">
+          
+        </div>
+        <div class="ml-8">
+          <p class="font-bold text-lg">Introduction to Cybersecurity</p>
+          <h3 class=" font-bold text-lg">Cisco <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>  
+        </div>
+      </div>
+
+      <div class="text-dark dark:text-light my-5 flex gap-y-5">
+        <div class="border border-l border-dark-green border-2 h-20">
+          
+        </div>
+        <div class="ml-8">
+          <p class="font-bold text-lg">JavaScript</p>
+          <h3 class=" font-bold text-lg">Udemy <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>  
+        </div>
+      </div>
+    
+    
+  </div>
+
+  <h2 class="text-dark dark:text-light font-bold text-2xl">Get in touch</h2>
+
+  <form class="shadow-md dark:shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:text-light" action="https://formbold.com/s/3nQx5" method="POST">
+    <div class="mb-4">
+      <label class="block  mb-2" for="email">
+        Your email:
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" name="email" placeholder="Enter your email">
+    </div>
+    <div class="mb-6">
+      <label class="block font-bold mb-2" for="message">
+        Your message:
+      </label>
+      <textarea class="shadow appearance-none border rounded w-full h-28 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" name="message" placeholder="Enter your message"></textarea>
+    </div>
+    <div class="flex items-center justify-center">
+      <button class="bg-dark-green text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Send 
+      </button>
+    </div>
+  </form>
+</MainLayout>
