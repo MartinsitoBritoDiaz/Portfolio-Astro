@@ -1,30 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { info } from "@data";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "@config";
-import BaseHead from "@components/general/BaseHead.astro";
 import Hero from "@components/home/Hero.astro";
 import HomeProjects from "@components/home/HomeProjects.astro";
-import Footer from "@components/general/Footer.astro";
-
+import MainLayout from "@layouts/MainLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
+<MainLayout>
+  <Hero name={info.name.split(" ")[0]} degree={info.degree} about={info["short-description"]} />
 
-  <body>
-    <Layout>
-      <Hero name={info.name.split(" ")[0]} degree={info.degree} about={info["short-description"]} />
-
-      <HomeProjects projects={info.work.projects} />   
-      
-      <div class="">
-        
-      </div>
-    </Layout>
-  </body>
-</html>
+  <HomeProjects projects={info.work.projects} />   
+</MainLayout>

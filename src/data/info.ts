@@ -25,7 +25,7 @@ export const info = {
         technologies: ["C#", "Blazor", "JS", "CSS", "Sql server"],
         url: "",
         code: "https://github.com/MartinsitoBritoDiaz/ProyectoFinal_Ferreteria-FBF-",
-        liveSite: "",
+        liveSite: "/",
         isDeploy: false,
         image: "/assets/images/project-hardware-store.webp",
       },

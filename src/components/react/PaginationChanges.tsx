@@ -23,7 +23,7 @@ export  const PaginationChanges = () => {
 
   return (
     <div>
-    <div className="grid md:grid-cols-2 gap-10 sm:gap-y-20 sm:grid-cols-1 mb-10 animate__animated animate__fadeInDown animate__faster">
+    <div className="grid md:grid-cols-2 gap-10 sm:gap-y-20 sm:grid-cols-1 mb-10 ">
       {
           content.map(( project: IProject, index: number ) => (
               <ProjectItem key={index} project={project} />

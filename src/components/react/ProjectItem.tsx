@@ -25,7 +25,7 @@ export const ProjectItem = ({ project }: myComponent) => {
                 </svg>
             </a>
         </div>
-        <img src={project.image} className="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" alt="featureImage" width="100%" height="100%" />
+        <img alt={project.name} src={project.image} className="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]" loading="lazy" width="100%" height="100%" />
         <div className="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700">
          <h3 className="mr-2 text-xl">{project.name}</h3>
         </div>

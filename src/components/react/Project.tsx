@@ -13,6 +13,7 @@ export const Project = (props: myComponent) => {
     <div className="card-cont-2">
       <div className="img-p3">
         <img
+          width="100%" height="100%"
           src={props.project.image}
           className="img-p1 md:max-w-lg max-w-full"
           alt={props.project.name}
@@ -42,6 +43,7 @@ export const Project = (props: myComponent) => {
           className="h-8 w-8 github-icon cursor-pointer "
           href={props.project.code}
           target="_blank"
+          aria-label="Git Hub"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +64,7 @@ export const Project = (props: myComponent) => {
           }`}
           href={props.project.liveSite}
           target="_blank"
+          aria-label="Live Site"
         >
           <svg
             className="path-link dark:stroke-light stroke-dark-green hover:fill-[#009644] dark:hover:fill-[#878b80] hover:stroke-[#009644] dark:hover:stroke-[#878b80] fill-dark-green dark:fill-light "
