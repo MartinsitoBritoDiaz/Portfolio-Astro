@@ -16,7 +16,6 @@
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 10rem;
-  transition: 0.2s var(--theme-transition);
 }
 .link.active,
 .link:hover,

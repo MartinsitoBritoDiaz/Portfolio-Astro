@@ -32,3 +32,9 @@ export interface IProject {
     liveSite: string,
     image: string,
 }
+
+export interface ICertification {
+    course: string,
+    institute: string,
+    accomplishDate: string,
+}

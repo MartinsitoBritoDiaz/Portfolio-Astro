@@ -1,48 +1,46 @@
 export const info = {
-  baseUrl: "",
-  logo: "/assets/images/logo.png",
-  logoA: "/assets/logoA.gif",
-  codeBackground: "/assets/codeBackground2.svg",
   name: "Martinsito Brito Diaz",
   degree: "System Engineer",
   "short-description": "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. ",
   description: "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
   profile: "/assets/images/profile-foto.jpeg",
+  hobbies: "I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. ",
+  aboutMe: "My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 22 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
   courses:[
     {
       course: "Java Script ES9 & NodeJS",
       institute: "Udemy",
-      relateDate: "2022",
+      accomplishDate: "2022",
     },
     {
       course: "Git Professional",
       institute: "Codigo Facilito",
-      relateDate: "2022",
+      accomplishDate: "2022",
     },
     {
       course: "Responsive Web Design",
       institute: "Free Code Camp",
-      relateDate: "2022",
+      accomplishDate: "2022",
     },
     {
       course: "Power BI",
       institute: "Infotep",
-      relateDate: "2021",
+      accomplishDate: "2021",
     },
     {
       course: "Intro. CiberSecurity",
       institute: "Cisco Networking Academy",
-      relateDate: "2021",
+      accomplishDate: "2021",
     },
     {
       course: "Linux Unhatched",
       institute: "Cisco Networking Academy",
-      relateDate: "2021",
+      accomplishDate: "2021",
     },
     {
       course: "Technical Support Fundamentals",
       institute: "Google / Coursera",
-      relateDate: "2021",
+      accomplishDate: "2021",
     },
   ],
   experiences: [
@@ -128,7 +126,7 @@ export const info = {
       },
       {
         name: "Journal Web App",
-        description: "Web App where you can save your daily notes about food, excersices and more information.",
+        description: "Web App where you can save your daily notes about food, excersices and more information. This project is part of a web development course in Udemy by Juan Pablo De la Torre.",
         technologies: ["React", "JS", "mui", "API", "Firebase"],
         url: "https://www.udemy.com/course/react-cero-experto/",
         code: "https://github.com/MartinsitoBritoDiaz/Journal-React-MUI",
@@ -268,6 +266,9 @@ export const info = {
     instagram: "https://www.instagram.com/martinbd09/",
     github: "https://github.com/MartinsitoBritoDiaz",
     linkedin: "https://www.linkedin.com/in/martinsito-brito-diaz-ab4a48213/",
-  },
+  },  
+  logo: "/assets/images/logo.png",
+  logoA: "/assets/logoA.gif",
+  codeBackground: "/assets/codeBackground2.svg",
 
 };
