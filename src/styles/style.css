@@ -73,7 +73,7 @@
     @apply bg-light dark:bg-dark font-nunito;
   }
   .container {
-    @apply max-w-[1280px] mx-auto px-5;
+    @apply max-w-[1280px] mx-auto px-5 ;
   }
   .container-sm{
 	@apply max-w-[1180px] mx-auto px-20;

@@ -9,7 +9,7 @@ interface myComponent {
 export const Project = (props: myComponent) => {
 
     return (
-<div className="cont">
+<div className="cont animate__animated animate__fadeInDown animate__faster" >
     <div className="card-cont-2">
       <div className="img-p3">
         <img

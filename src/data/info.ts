@@ -17,7 +17,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/BlogDeCafe",
         liveSite: "https://blogdecafembd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/project-blog-cafe.jpg",
+        image: "/assets/images/project-blog-cafe.webp",
       },
       {
         name: "Hardware Store",
@@ -27,17 +27,17 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/ProyectoFinal_Ferreteria-FBF-",
         liveSite: "",
         isDeploy: false,
-        image: "/assets/images/project-hardware-store.jpg",
+        image: "/assets/images/project-hardware-store.webp",
       },
       {
-        name: "Music Festival",
-        description: "Static web page about one music festival in the Dominican Republic, this project is part of a web development course in Udemy by Juan Pablo De la Torre.",
-        technologies: ["HTML", "CSS", "JS", "SASS", "GULP"],
-        url: "https://www.udemy.com/course/desarrollo-web-completo-con-html5-css3-js-php-y-mysql/",
-        code: "https://github.com/MartinsitoBritoDiaz/MusicFestival",
-        liveSite: "https://music-festival-mbd.netlify.app/",
+        name: "Advice Generator",
+        description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
+        technologies: ["HTML", "CSS", "JS", "API"],
+        url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
+        code: "https://github.com/MartinsitoBritoDiaz/Advice-Generator-App",
+        liveSite: "https://martinsitobritodiaz.github.io/Advice-Generator-App/",
         isDeploy: true,
-        image: "/assets/images/project-music-festival.jpg",
+        image: "/assets/images/project-advice-generator.webp",
       },
       {
         name: "Journal Web App",
@@ -47,19 +47,11 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Journal-React-MUI",
         liveSite: "https://journalapp-omega.vercel.app/",
         isDeploy: true,
-        image: "/assets/images/project-journal-app.png",
+        image: "/assets/images/project-journal-app.webp",
       },
 
-      {
-        name: "Advice Generator",
-        description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
-        technologies: ["HTML", "CSS", "JS", "API"],
-        url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
-        code: "https://github.com/MartinsitoBritoDiaz/Advice-Generator-App",
-        liveSite: "https://martinsitobritodiaz.github.io/Advice-Generator-App/",
-        isDeploy: true,
-        image: "/assets/images/project-advice-generator.jpg",
-      },
+      
+      
       {
         name: "Heroes",
         description: "Web site about some super heroes, It was my first time using react router. ",
@@ -68,7 +60,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/HeroesReactApp",
         liveSite: "https://heroesapp-martinsito.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/project-heroes.jpg",
+        image: "/assets/images/project-heroes.webp",
       },
       {
         name: "News Website Homepage",
@@ -78,7 +70,17 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/News-HomePage",
         liveSite: "https://news-homepage-mbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/project-landing-news-page.jpg",
+        image: "/assets/images/project-landing-news-page.webp",
+      },
+      {
+        name: "Music Festival",
+        description: "Static web page about one music festival in the Dominican Republic, this project is part of a web development course in Udemy by Juan Pablo De la Torre.",
+        technologies: ["HTML", "CSS", "JS", "SASS", "GULP"],
+        url: "https://www.udemy.com/course/desarrollo-web-completo-con-html5-css3-js-php-y-mysql/",
+        code: "https://github.com/MartinsitoBritoDiaz/MusicFestival",
+        liveSite: "https://music-festival-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/project-music-festival.webp",
       },
       {
         name: "FAQ Accordin Card",
@@ -88,7 +90,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Faq-Accordion-Card",
         liveSite: "https://martinsitobritodiaz.github.io/Faq-Accordion-Card/",
         isDeploy: true,
-        image: "/assets/images/project-faq-according-card.jpg",
+        image: "/assets/images/project-faq-according-card.webp",
       },
       
       {
@@ -99,7 +101,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/FrontEndStore",
         liveSite: "https://stingfrontendstore.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/project-frontend-store.png",
+        image: "/assets/images/project-frontend-store.webp",
       },
       
       {
@@ -110,7 +112,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Interactive-Rating--Component",
         liveSite: "https://martinsitobritodiaz.github.io/Interactive-Rating--Component/",
         isDeploy: true,
-        image: "/assets/images/interactive-rating-component.jpg",
+        image: "/assets/images/interactive-rating-component.webp",
       },
 
       
@@ -122,7 +124,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/ProductPreviewCardComponent",
         liveSite: "https://productpreviewcardmbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/product-preview-card-component.jpg",
+        image: "/assets/images/product-preview-card-component.webp",
       },
 
       
@@ -134,7 +136,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Social-Proof-Section",
         liveSite: "https://martinsitobritodiaz.github.io/Social-Proof-Section/",
         isDeploy: true,
-        image: "/assets/images/social-proof-component.jpg",
+        image: "/assets/images/social-proof-component.webp",
       },
 
       {
@@ -145,7 +147,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Intro-Component-With-Signup-Form",
         liveSite: "https://intro-component-mbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/signup-form-component.jpg",
+        image: "/assets/images/signup-form-component.webp",
       },
 
       {
@@ -156,7 +158,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Coming-Soon-Page",
         liveSite: "https://coming-soon-ping-mbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/coming-soon-ping-project.jpg",
+        image: "/assets/images/coming-soon-ping-project.webp",
       },
 
       {
@@ -167,7 +169,7 @@ export const info = {
         code: "https://github.com/MartinsitoBritoDiaz/Nft-Preview-Card-Component",
         liveSite: "https://nft-card-mbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/nft-card-component.jpg",
+        image: "/assets/images/nft-card-component.webp",
       },
 
       
@@ -179,6 +181,5 @@ export const info = {
     instagram: "https://www.instagram.com/martinbd09/",
     github: "https://github.com/MartinsitoBritoDiaz",
   },
-  image: "/assets/images/project-music-festival.jpg",
 
 };
