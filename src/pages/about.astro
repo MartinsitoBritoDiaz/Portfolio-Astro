@@ -14,7 +14,7 @@ import { info } from "@data";
     
         <div class="text-dark dark:text-light my-5 flex gap-y-5">
           <div class="ml-8">
-            <p class="  text-lg">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities. </p>
+            <p class="  text-lg">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 22 years old, at the age of fourteen, it was my first time using technology while I was at highschool, since that time I have been loving this area. </p>
           </div>
         </div>
     
@@ -22,7 +22,7 @@ import { info } from "@data";
     
         <div class="text-dark dark:text-light my-5 flex gap-y-5">
           <div class="ml-8">
-            <p class="  text-lg">I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. I am 22 years old, at the age of fourteen, it was my first time using technology while I was at highschool, since that time I have been loving this area. </p>
+            <p class="  text-lg">I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. </p>
           </div>
         </div>
         
@@ -47,86 +47,89 @@ import { info } from "@data";
   </div>
 
   <div class="my-8">
-    <h3 class="text-dark dark:text-light font-bold text-xl">Experience</h3>
+    <h3 class="text-dark dark:text-light font-bold text-xl">Experiences</h3>
 
-    <div class="text-dark dark:text-light my-5 flex gap-y-5">
-      <div class="border border-l border-dark-green border-2 h-20">
-        
+    {
+      info.experiences.map((data) => (
+        <div class="text-dark dark:text-light my-10 flex gap-y-5">
+        <div class="border-l-4 border-dark-green h-fit pl-8">
+          <p class="font-bold text-lg">{data.role}</p>
+          <h3 class=" font-bold text-lg text-light-green dark:text-light">{data.company} <span class="font-light text-sm pl-3">{data.duration}</span></h3>
+          <ul class="list-disc list-inside flex flex-col gap-y-2">
+            {
+              data.work.map((work) => (
+                <li>{work.exp}</li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
-      <div class="ml-8">
-      <p class="font-bold text-lg">System Engineer Jr.</p>
+      ))
+    }
+    <!-- <div class="text-dark dark:text-light my-5 flex gap-y-5">
+      <div class="border-l-4 border-dark-green h-fit pl-8">
+        <p class="font-bold text-lg">System Engineer Jr.</p>        
         <h3 class=" font-bold text-lg">Camsoft SRL <span class="font-light text-sm pl-3">Oct. 2022 - Currently</span></h3>
-        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+        <ul class="list-disc list-inside flex flex-col gap-y-2">
+          <li>
+            Developed UI components for web applications in React, Typescript and DevExtreme.
+          </li>
+          <li>
+            Managed data with SQL and SQL Server.
+          </li>
+          <li>
+            Developed web services in Asp Dot Net C#, always using the best practices like Clean Code, SOLID and dependency injection.
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="text-dark dark:text-light my-5 flex gap-y-5">
-      <div class="border border-l border-dark-green border-2 h-20">
-        
-      </div>
-      <div class="ml-8">
+      <div class="border-l-4 border-dark-green h-fit pl-8">
         <p class="font-bold text-lg">Web Developer (Internship)</p>
-        <h3 class=" font-bold text-lg">Soluciones Almonte Gil<span class="font-light text-sm pl-3">Jan. 2021 - May. 2021</span></h3>
-        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+        <h3 class=" font-bold text-lg text-light-green dark:text-light">Soluciones Almonte Gil<span class=" text-dark dark:text-light font-light text-sm pl-3">Jan. 2021 - May. 2021</span></h3>
+        <ul class="list-disc list-inside flex flex-col gap-y-2">
+          <li>
+            Developed a web application on ASP Dot NET 5, Blazor and C#, in this project I learn how to create web services, API and handle data with web scraping.
+          </li>
+          <li>
+            Designed and Developed a static website, the mock up of this web site was made on adobe xd, later it was developed using HTML, CSS and JS.
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="text-dark dark:text-light my-5 flex gap-y-5">
-      <div class="border border-l border-dark-green border-2 h-20">
-        
-      </div>
-      <div class="ml-8">
+      <div class="border-l-4 border-dark-green h-fit pl-8">
         <p class="font-bold text-lg">Back End (Internship)</p>
         <h3 class=" font-bold text-lg">Univerisdad Católica Nordestana <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>
-
-        <p class=" text-md">My name is Martinsito Brito Diaz, I currently live the Dominican Republic. I'm a young man who is always looking for new oportunities and new places where grow up. </p>
+        <ul class="list-disc list-inside flex flex-col gap-y-2">
+          <li>
+            Collaborated in the development group of a server side application, that gets data to manage, analyze and send it, as a valuable information to all the employees in the company.
+            This project was made using C#, SQL Server.
+          </li>
+          <li>
+            Assisted as an IT Support helping out to create a IT lab for one school near the university.
+          </li>
+        </ul>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
-    <div class="my-8">
-      <h3 class="text-dark dark:text-light font-bold text-xl">Certifications & Courses</h3>
-  
-      <div class="text-dark dark:text-light my-5 flex gap-y-5">
-        <div class="border border-l border-dark-green border-2 h-20">
-          
-        </div>
-        <div class="ml-8">
-          <p class="font-bold text-lg">Responsive Web Design</p>
-          <h3 class=" font-bold text-lg">FreeCodeCamp <span class="font-light text-sm pl-3">Oct. 2022 - Currently</span></h3>
-        </div>
-      </div>
-  
-      <div class="text-dark dark:text-light my-5 flex gap-y-5">
-        <div class="border border-l border-dark-green border-2 h-16"></div>
-        <div class="ml-8">
-          <p class="font-bold text-lg">Technical Support</p>
-          <h3 class=" font-bold text-lg">Google - Coursera<span class="font-light text-sm pl-3">Jan. 2021 - May. 2021</span></h3>
-        </div>
-      </div>
-  
-      <div class="text-dark dark:text-light my-5 flex gap-y-5">
-        <div class="border border-l border-dark-green border-2 h-20">
-          
-        </div>
-        <div class="ml-8">
-          <p class="font-bold text-lg">Introduction to Cybersecurity</p>
-          <h3 class=" font-bold text-lg">Cisco <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>  
-        </div>
-      </div>
+  <div class="my-8">
+    <h3 class="text-dark dark:text-light font-bold text-xl">Certifications & Courses</h3>
 
-      <div class="text-dark dark:text-light my-5 flex gap-y-5">
-        <div class="border border-l border-dark-green border-2 h-20">
-          
+    {
+      info.courses.map((course) => (
+        <div class="text-dark dark:text-light my-5 flex gap-y-5">
+          <div class="ml-8">
+            <p class="font-bold text-lg">{course.course}</p>
+            <h3 class=" font-bold text-lg text-light-green dark:text-light">{course.institute} <span class="font-light text-sm pl-3">{course.relateDate}</span></h3>
+          </div>
         </div>
-        <div class="ml-8">
-          <p class="font-bold text-lg">JavaScript</p>
-          <h3 class=" font-bold text-lg">Udemy <span class="font-light text-sm pl-3">Oct. 2019 - March 2020</span></h3>  
-        </div>
-      </div>
-    
-    
+      ))
+    }  
   </div>
 
   <h2 class="text-dark dark:text-light font-bold text-2xl">Get in touch</h2>

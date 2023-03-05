@@ -8,6 +8,92 @@ export const info = {
   "short-description": "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. ",
   description: "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
   profile: "/assets/images/profile-foto.jpeg",
+  courses:[
+    {
+      course: "Java Script ES9 & NodeJS",
+      institute: "Udemy",
+      relateDate: "2022",
+    },
+    {
+      course: "Git Professional",
+      institute: "Codigo Facilito",
+      relateDate: "2022",
+    },
+    {
+      course: "Responsive Web Design",
+      institute: "Free Code Camp",
+      relateDate: "2022",
+    },
+    {
+      course: "Power BI",
+      institute: "Infotep",
+      relateDate: "2021",
+    },
+    {
+      course: "Intro. CiberSecurity",
+      institute: "Cisco Networking Academy",
+      relateDate: "2021",
+    },
+    {
+      course: "Linux Unhatched",
+      institute: "Cisco Networking Academy",
+      relateDate: "2021",
+    },
+    {
+      course: "Technical Support Fundamentals",
+      institute: "Google / Coursera",
+      relateDate: "2021",
+    },
+  ],
+  experiences: [
+    {
+      company: "Camsoft SRL",
+      role: "System Engineer Jr.",
+      duration: "Oct. 2022 - Currently",
+      work: [
+        {
+          exp: "Developed UI components for web applications in React, Typescript and DevExtreme."
+        },
+        
+        {
+          exp: "Managed data with SQL and SQL Server."
+        },
+        
+        {
+          exp: "Developed web services in Asp Dot Net C#, always using the best practices like Clean Code, SOLID and dependency injection."
+        }
+      ]
+    },
+    {
+      company: "Soluciones Almonte Gil",
+      role: "Web Developer (Internship)",
+      duration: "Jan. 2021 - May. 2021",
+      work: [
+        {
+          exp: "Developed a web application on ASP Dot NET 5, Blazor and C#, in this project I learn how to create web services, API and handle data with web scraping."
+        },
+        
+        {
+          exp: "Designed and Developed a static website, the mock up of this web site was made on adobe xd, later it was developed using HTML, CSS and JS."
+        },
+      ]
+    },
+    {
+      company: "Universidad Católica Nordestana",
+      role: "Back End (Internship)",
+      duration: "Oct. 2019 - March 2020",
+      work: [
+        {
+          exp: "Collaborated in the development group of a server side application, that gets data to manage, analyze and send it, as a valuable information to all the employees in the company. This project was made using C#, SQL Server."
+        },
+        
+        {
+          exp: "Assisted as an IT Support helping out to create a IT lab for one school near the university."
+        },
+      ]
+    },
+    
+  ],
   work: {
     projects: [
       {
@@ -181,6 +267,7 @@ export const info = {
     twitter: "https://twitter.com/martinbd09",
     instagram: "https://www.instagram.com/martinbd09/",
     github: "https://github.com/MartinsitoBritoDiaz",
+    linkedin: "https://www.linkedin.com/in/martinsito-brito-diaz-ab4a48213/",
   },
 
 };
