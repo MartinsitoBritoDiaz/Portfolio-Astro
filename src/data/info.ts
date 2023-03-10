@@ -117,7 +117,7 @@ export const info = {
       
       {
         name: "Tip Calculator",
-        description: "Splitter Tip Calculator. ",
+        description: "Splitter Tip Calculator, this project is a tip calculator, you fill out the bill field, also you have to write the number of people and  select the percentage of tips. ",
         technologies: ["React", "TypeScript", "CSS"],
         url: "https://www.frontendmentor.io/",
         code: "https://github.com/MartinsitoBritoDiaz/SplitterApp",
