@@ -113,17 +113,19 @@ export const info = {
         liveSite: "/",
         isDeploy: false,
         image: "/assets/images/project-hardware-store.webp",
-      },
+      },      
+      
       {
-        name: "Advice Generator",
-        description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
-        technologies: ["HTML", "CSS", "JS", "API"],
-        url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
-        code: "https://github.com/MartinsitoBritoDiaz/Advice-Generator-App",
-        liveSite: "https://martinsitobritodiaz.github.io/Advice-Generator-App/",
+        name: "Tip Calculator",
+        description: "Splitter Tip Calculator. ",
+        technologies: ["React", "TypeScript", "CSS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/SplitterApp",
+        liveSite: "https://splitterapp-mbd.netlify.app/",
         isDeploy: true,
-        image: "/assets/images/project-advice-generator.webp",
+        image: "/assets/images/splitter-react-web-app.webp",
       },
+
       {
         name: "Journal Web App",
         description: "Web App where you can save your daily notes about food, excersices and more information. This project is part of a web development course in Udemy by Juan Pablo De la Torre.",
@@ -136,6 +138,16 @@ export const info = {
       },
 
       
+      {
+        name: "Advice Generator",
+        description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
+        technologies: ["HTML", "CSS", "JS", "API"],
+        url: "https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db",
+        code: "https://github.com/MartinsitoBritoDiaz/Advice-Generator-App",
+        liveSite: "https://martinsitobritodiaz.github.io/Advice-Generator-App/",
+        isDeploy: true,
+        image: "/assets/images/project-advice-generator.webp",
+      },
       
       {
         name: "Heroes",
