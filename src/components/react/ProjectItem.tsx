@@ -16,7 +16,7 @@ export const ProjectItem = ({ project }: myComponent) => {
                 </svg>
             </a>
     
-        <a href={project.liveSite} className={`text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1 cursor-pointer  ${
+        <a href={project.liveSite} className={`text-white p-3 bg-black/50 rounded-full backdrop-blur-md ml-1 cursor-pointer  z-40 ${
             !project.isDeploy ? "hidden" : "block"
           }`}  aria-label="Social Media" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-link-2">

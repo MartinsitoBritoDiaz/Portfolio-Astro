@@ -107,7 +107,7 @@ export const info = {
       {
         name: "Hardware Store",
         description: "Web application created as a university final project, this project is a Point-Of-Sales web app, also it has many modules to work with.",
-        technologies: ["C#", "Blazor", "JS", "CSS", "Sql server"],
+        technologies: ["C#", "Blazor", "JS", "Sql server"],
         url: "",
         code: "https://github.com/MartinsitoBritoDiaz/ProyectoFinal_Ferreteria-FBF-",
         liveSite: "/",
@@ -129,7 +129,7 @@ export const info = {
       {
         name: "Journal Web App",
         description: "Web App where you can save your daily notes about food, excersices and more information. This project is part of a web development course in Udemy by Juan Pablo De la Torre.",
-        technologies: ["React", "JS", "mui", "API", "Firebase"],
+        technologies: ["React", "mui", "API", "Firebase"],
         url: "https://www.udemy.com/course/react-cero-experto/",
         code: "https://github.com/MartinsitoBritoDiaz/Journal-React-MUI",
         liveSite: "https://journalapp-omega.vercel.app/",
