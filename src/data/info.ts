@@ -114,17 +114,17 @@ export const info = {
         isDeploy: false,
         image: "/assets/images/project-hardware-store.webp",
       },      
-      
       {
-        name: "Tip Calculator",
-        description: "Splitter Tip Calculator, this project is a tip calculator, you fill out the bill field, also you have to write the number of people and  select the percentage of tips. ",
-        technologies: ["React", "TypeScript", "CSS"],
-        url: "https://www.frontendmentor.io/",
-        code: "https://github.com/MartinsitoBritoDiaz/SplitterApp",
-        liveSite: "https://splitterapp-mbd.netlify.app/",
+        name: "Calendar APP",
+        description: "Web application to manage events and keeps track on them, this project is part of a web development course in Udemy by Fernando Herrera.",
+        technologies: ["MongoDB", "Express","React", "Node", "Bootstrap"],
+        url: "https://www.udemy.com/course/react-cero-experto/",
+        code: "https://github.com/MartinsitoBritoDiaz/CalendarApp",
+        liveSite: "https://calendar-mbd.vercel.app/",
         isDeploy: true,
-        image: "/assets/images/splitter-react-web-app.webp",
+        image: "/assets/images/project-calendarApp.webp",
       },
+      
 
       {
         name: "Journal Web App",
@@ -137,7 +137,17 @@ export const info = {
         image: "/assets/images/project-journal-app.webp",
       },
 
-      
+      {
+        name: "Tip Calculator",
+        description: "Splitter Tip Calculator, this project is a tip calculator, you fill out the bill field, also you have to write the number of people and  select the percentage of tips. ",
+        technologies: ["React", "TypeScript", "CSS"],
+        url: "https://www.frontendmentor.io/",
+        code: "https://github.com/MartinsitoBritoDiaz/SplitterApp",
+        liveSite: "https://splitterapp-mbd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/splitter-react-web-app.webp",
+      },
+
       {
         name: "Advice Generator",
         description: "Web site that gets a bunch of different advice each time you press the dice icon, in this project I was practicing fecth API request with JS.",
