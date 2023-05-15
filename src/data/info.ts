@@ -117,7 +117,7 @@ export const info = {
       {
         name: "Calendar APP",
         description: "Web application to manage events and keeps track on them, this project is part of a web development course in Udemy by Fernando Herrera.",
-        technologies: ["MongoDB", "Express","React", "Node", "Bootstrap"],
+        technologies: ["MongoDB", "Express","React", "Node"],
         url: "https://www.udemy.com/course/react-cero-experto/",
         code: "https://github.com/MartinsitoBritoDiaz/CalendarApp",
         liveSite: "https://calendar-mbd.vercel.app/",
