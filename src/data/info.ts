@@ -107,7 +107,7 @@ export const info = {
       {
         name: "Hardware Store",
         description: "Web application created as a university final project, this project is a Point-Of-Sales web app, also it has many modules to work with.",
-        technologies: ["C#", "Blazor", "JS", "Sql server"],
+        technologies: ["C#", "Blazor", "Azure", "Sql server"],
         url: "",
         code: "https://github.com/MartinsitoBritoDiaz/ProyectoFinal_Ferreteria-FBF-",
         liveSite: "/",
