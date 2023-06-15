@@ -8,6 +8,11 @@ export const info = {
   aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 22 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
   courses:[
     {
+      course: "Design Patterns C#",
+      institute: "Udemy",
+      accomplishDate: "2023",
+    },
+    {
       course: "Java Script ES9 & NodeJS",
       institute: "Udemy",
       accomplishDate: "2022",
