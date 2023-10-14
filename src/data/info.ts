@@ -6,6 +6,14 @@ export const info = {
   profile: "/assets/images/profile-foto.jpeg",
   hobbies: "I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. ",
   aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 22 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time, I have been loving this area. ",
+  certifications: [
+    {
+      name: "test",
+      earnedOnDate: "test",
+      expirationDate: "test",
+      referenceLink: "test"
+    }
+  ],
   courses:[
     {
       course: "Design Patterns C#",
