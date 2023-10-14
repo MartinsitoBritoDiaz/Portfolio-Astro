@@ -282,10 +282,7 @@ export const info = {
         liveSite: "https://nft-card-mbd.netlify.app/",
         isDeploy: true,
         image: "/assets/images/nft-card-component.webp",
-      },
-
-      
-      
+      }      
     ]
   },
   contact: {
@@ -297,5 +294,4 @@ export const info = {
   logo: "/assets/images/logo.png",
   logoA: "/assets/logoA.gif",
   codeBackground: "/assets/codeBackground2.svg",
-
 };

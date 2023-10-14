@@ -1,23 +1,20 @@
 ---
 import { Project } from "@components";
 import { IHomeProjectsProps } from "@types";
-
-
-
 const { projects } = Astro.props as IHomeProjectsProps;
 ---
 
-<div class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green my-28">
-    <h2
-      class="py-5 dark:text-light text-dark-green text-3xl font-bold  my-10"
-    >
-      Some of my projects
-    </h2>
-    <div class="grid gap-y-10 mx-auto">
-      {
-        projects.slice(0, 4).map((project) => (
-          <Project project={ project } />
-        ))
-      }
-    </div>
+<section class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green my-28">
+  <h2
+    class="py-5 dark:text-light text-dark-green text-3xl font-bold  my-10"
+  >
+    Some of my projects
+  </h2>
+  <div class="grid gap-y-10 mx-auto">
+    {
+      projects.slice(0, 4).map((project) => (
+        <Project project={ project } />
+      ))
+    }
   </div>
+</section>

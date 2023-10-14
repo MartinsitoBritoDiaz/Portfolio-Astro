@@ -1,26 +1,26 @@
 ---
-import { info } from '@data';
+import { info } from "@data";
 ---
 
-
 <div class="my-8">
-    <h3 class="text-dark dark:text-light font-bold text-xl">Experience</h3>
+  <h3 class="text-dark dark:text-light font-bold text-xl">Experience</h3>
 
-    {
-      info.experiences.map((data) => (
-        <div class="text-dark dark:text-light my-10 flex gap-y-5">
+  {
+    info.experiences.map((data) => (
+      <div class="text-dark dark:text-light my-10 flex gap-y-5">
         <div class="border-l-4 border-dark-green h-fit pl-8">
           <p class="font-bold text-lg">{data.role}</p>
-          <h3 class=" font-bold text-md text-light-green dark:text-light">{data.company} <span class="font-light text-sm pl-3">{data.duration}</span></h3>
+          <h3 class=" font-bold text-md text-light-green dark:text-light">
+            {data.company}{" "}
+            <span class="font-light text-sm pl-3">{data.duration}</span>
+          </h3>
           <ul class="list-disc list-inside flex flex-col gap-y-2">
-            {
-              data.work.map((work) => (
-                <li>{work.exp}</li>
-              ))
-            }
+            {data.work.map((work) => (
+              <li>{work.exp}</li>
+            ))}
           </ul>
         </div>
       </div>
-      ))
-    }
-  </div>
+    ))
+  }
+</div>
