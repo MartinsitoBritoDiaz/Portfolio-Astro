@@ -1,0 +1,38 @@
+---
+import Certifications from '@components/home/Certifications.astro';
+import { ICertification } from '@types';
+
+const { title, logo, description, earnedOn, expiresOn, verificationUrl } = Astro.props as ICertification;
+---
+
+<div class="w-full max-w-sm dark:bg-[#202020] dark:text-light rounded-lg shadow">
+  <div class="flex flex-col items-center p-8">
+    <img
+      class="w-24 h-24 mb-3 rounded-full shadow-lg"
+      src={logo}
+      alt="Bonnie image"
+    />
+    <h5 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">
+      {title}
+    </h5>
+    <span class="text-sm text-gray-500 dark:text-gray-400">
+      {description}
+    </span>
+    <span class="text-sm text-gray-500 dark:text-gray-400">
+      Issued {earnedOn} {" "}
+      {expiresOn.length > 0
+        ? `- Expires ${expiresOn}`
+        : ""}
+    </span> 
+
+    <div class="flex mt-4 md:mt-6">
+      <a
+        href={verificationUrl}
+        target="_blank"
+        class="bg-dark-green text-light text font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline "
+      >
+        View badge
+      </a>
+    </div>
+  </div>
+</div>

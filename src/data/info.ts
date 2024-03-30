@@ -1,12 +1,49 @@
 export const info = {
   name: "Martinsito Brito Diaz",
-  degree: "System Engineer",
-  "short-description": "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. ",
-  description: "Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
+  degree: "Systems Engineer",
+  "short-description": "Throughout my career, I've honed my skills in ASP .NET C#, React TS, and Azure. My experience spans cloud projects on Azure and proficiency with Umbraco CMS. I specialize in crafting solutions with ASP .NET and React TS, emphasizing clean code and clean architecture.",
+  description: "Welcome to Martinsito's Software Engineer Portfolio. Explore my projects, skills, and experience in software development. Over the course of my career I've worked extensively with ASP .NET C#, React JS, TypeScript, and SQL Server, often taking on tasks that are typically assigned to full stack developers. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
   profile: "/assets/images/profile-foto.jpeg",
   hobbies: "I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. ",
-  aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 22 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
+  aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 23 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
+  certifications:[
+    {
+      title: "Azure Developer Associate",
+      description: "Microsoft Certified",
+      earnedOn: "Mar 2024",
+      expiresOn: "Mar 2025",
+      credentialID: "D6DAADA848D27973",
+      certificationNumber: "D7TBDB-9651A0",
+      verificationUrl: "https://learn.microsoft.com/en-us/users/martinsitobritodiaz-9963/credentials/d6daada848d27973",
+      logo: "/assets/images/microsoft-certified-associate-badge.webp"
+    },
+    {
+      title: "Azure Fundamentals",
+      description: "Microsoft Certified",
+      earnedOn: "Aug 2023",
+      expiresOn: "",
+      credentialID: "84709C390190CBEB",
+      certificationNumber: "85E4Q2-6D1F65",
+      verificationUrl: "https://learn.microsoft.com/en-us/users/MartinsitoBritoDiaz-9963/credentials/84709C390190CBEB",
+      logo: "/assets/images/microsoft-certified-fundamentals-badge.webp"
+    }
+  ],
   courses:[
+    {
+      course: "Microsoft Azure Functions - Developing Serverless Solutions",
+      institute: "Udemy",
+      accomplishDate: "2024",
+    },
+    {
+      course: "C# Intermediate: Classes, Interfaces and OOP",
+      institute: "Udemy",
+      accomplishDate: "2024",
+    },
+    {
+      course: "Gestión inteligente del tiempo (Productividad)",
+      institute: "Udemy",
+      accomplishDate: "2023",
+    },
     {
       course: "Design Patterns C#",
       institute: "Udemy",
@@ -50,20 +87,39 @@ export const info = {
   ],
   experiences: [
     {
-      company: "Camsoft SRL",
-      role: "System Engineer Jr.",
-      duration: "Oct. 2022 - Currently",
+      company: "Evopoint Solutions",
+      role: "Intermediate Software Developer.",
+      duration: "Jun. 2023 - Currently",
+      description:"I specialize in leveraging Umbraco CMS, developing Azure solutions, and crafting solutions utilizing ASP.NET, including APIs and ASP.NET MVC projects. My primary focus is on ensuring seamless communication between diverse software systems through cutting-edge solutions.",
       work: [
         {
-          exp: "Developed UI components for web applications in React, Typescript and DevExtreme."
-        },
-        
+          exp: "Umbraco CMS Expertise: Proficient in developing and managing Umbraco-based websites and applications, I ensure robust content management and user experiences."
+        }, 
+        {
+          exp: "Azure Solutions Development: I design and implement Azure-based solutions tailored to meet specific business requirements, ensuring scalability, reliability, and security."
+        },        
+        {
+          exp: "ASP.NET API Integration: Collaborating on ASP.NET projects, I specialize in integrating APIs to facilitate smooth data exchange between various software applications."
+        },       
+        {
+          exp: "Team Collaboration: I work closely with the in-house development team, translating business needs into technical solutions to drive successful outcomes and foster innovation. My contributions enable us to achieve our collective goals efficiently."
+        }
+      ]
+    },
+    {
+      company: "Camsoft SRL",
+      role: "Software Engineer Jr.",
+      duration: "Oct. 2022 - Jun. 2023",
+      description:"As a Software Engineer at Camsoft, I excelled in both front-end and back-end roles, ensuring the delivery of top-notch web applications. Key contributions include:",
+      work: [
+        {
+          exp: "Frontend Mastery: Orchestrated the creation of React-based UI components with Typescript, DevExtreme, transforming designs into seamless and interactive user interfaces."
+        }, 
+        {
+          exp: " Backend Expertise: Engineered robust web services using ASP.NET C#, adhering rigorously to Clean Code and SOLID principles. This fostered a strong foundation for scalable and maintainable backend systems."
+        },        
         {
           exp: "Managed data with SQL and SQL Server."
-        },
-        
-        {
-          exp: "Developed web services in Asp Dot Net C#, always using the best practices like Clean Code, SOLID and dependency injection."
         }
       ]
     },
@@ -100,6 +156,16 @@ export const info = {
   work: {
     projects: [
       {
+        name: "Personal Portfolio",
+        description: "Personal portfolio where I show all my skills and personal projects that I made. This portfolio is my first project using Astro JS Framework.",
+        technologies: ["ASTRO", "Tailwind", "Typescript", "SASS", "React"],
+        url: "https://astro.build/",
+        code: "https://github.com/MartinsitoBritoDiaz/Portfolio-Astro",
+        liveSite: "https://martinsitobd.netlify.app/",
+        isDeploy: true,
+        image: "/assets/images/portfolio.webp",
+      },
+      {
         name: "Blog Café",
         description: "Static web page about a blog café, this project is part of a web development course in Udemy by Juan Pablo De la Torre.",
         technologies: ["HTML", "CSS", "JS", "SASS", "GULP"],
@@ -112,7 +178,7 @@ export const info = {
       {
         name: "Hardware Store",
         description: "Web application created as a university final project, this project is a Point-Of-Sales web app, also it has many modules to work with.",
-        technologies: ["C#", "Blazor", "Azure", "Sql server"],
+        technologies: ["C#", "Blazor", "Azure", "Sql"],
         url: "",
         code: "https://github.com/MartinsitoBritoDiaz/ProyectoFinal_Ferreteria-FBF-",
         liveSite: "/",

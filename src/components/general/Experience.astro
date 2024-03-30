@@ -12,6 +12,7 @@ import { info } from '@data';
         <div class="border-l-4 border-dark-green h-fit pl-8">
           <p class="font-bold text-lg">{data.role}</p>
           <h3 class=" font-bold text-md text-light-green dark:text-light">{data.company} <span class="font-light text-sm pl-3">{data.duration}</span></h3>
+          { data.description != null ? <p class="mt-2 mb-2">{data.description}</p> : "" }
           <ul class="list-disc list-inside flex flex-col gap-y-2">
             {
               data.work.map((work) => (

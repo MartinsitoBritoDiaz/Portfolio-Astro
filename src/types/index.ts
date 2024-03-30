@@ -9,7 +9,9 @@ export interface IHeroProps {
     degree: string;
     about: string;
 }
-
+export interface ICertificationsProps {
+    certifications: ICertification[];
+}
 export interface IHomeProjectsProps {
     projects: [];
 }
@@ -33,8 +35,19 @@ export interface IProject {
     image: string,
 }
 
-export interface ICertification {
+export interface ICourse {
     course: string,
     institute: string,
     accomplishDate: string,
+}
+
+export interface ICertification {
+    title: string,
+    description: string,
+    earnedOn: string,
+    expiresOn: string,
+    credentialID: string,
+    certificationNumber: string,
+    verificationUrl: string,
+    logo: string
 }

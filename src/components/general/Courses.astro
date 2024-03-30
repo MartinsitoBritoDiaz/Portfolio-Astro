@@ -1,13 +1,13 @@
 ---
 import { info } from '@data';
-import { ICertification } from '@types';
+import { ICourse } from '@types';
 ---
 
 <div class="my-8">
     <h3 class="text-dark dark:text-light font-bold text-xl">Certifications & Courses</h3>
 
     {
-      info.courses.map((course: ICertification) => (
+      info.courses.map((course: ICourse) => (
         <div class="text-dark dark:text-light my-5 flex gap-y-5">
           <div class="ml-8">
             <p class="font-bold text-lg">{course.course}</p>

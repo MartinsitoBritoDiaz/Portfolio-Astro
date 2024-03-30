@@ -1,0 +1,21 @@
+---
+import Certification from "@components/general/Certification.astro";
+import { ICertification, ICertificationsProps } from "@types";
+
+const { certifications } = Astro.props as ICertificationsProps;
+---
+
+<div class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green my-28">
+  <h2 class="py-5 dark:text-light text-dark-green text-3xl font-bold my-10">
+    Certifications
+  </h2>
+  <div
+    class="flex flex-wrap justify-around gap-y-10 gap-x-4 mx-auto lg:gap-x-8 lg:gap-y-8"
+  >
+    {
+      certifications.map((certification: ICertification) => (
+        <Certification {...certification} />
+      ))
+    }
+  </div>
+</div>
