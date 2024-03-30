@@ -1,5 +1,10 @@
 # Astro Starter Kit: Basics
 
+## SEO 
+
+![image](https://github.com/MartinsitoBritoDiaz/Portfolio-Astro/assets/54644026/5c37bb12-42d5-4ad0-962d-54bc91f742fa)
+
+
 ```
 npm create astro@latest -- --template basics
 ```
