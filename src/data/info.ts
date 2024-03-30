@@ -158,7 +158,7 @@ export const info = {
       {
         name: "Personal Portfolio",
         description: "Personal portfolio where I show all my skills and personal projects that I made. This portfolio is my first project using Astro JS Framework.",
-        technologies: ["ASTRO", "Tailwind", "Typescript", "SASS", "React"],
+        technologies: ["ASTRO", "Tailwind", "React", "TS"],
         url: "https://astro.build/",
         code: "https://github.com/MartinsitoBritoDiaz/Portfolio-Astro",
         liveSite: "https://martinsitobd.netlify.app/",
