@@ -31,7 +31,7 @@ export const Project = (props: myComponent) => {
         <p className="paragraph-card my-2 p-5 sm:pl-0 max-w-lg text-dark-green font-bold dark:text-light">
           {props.project.description}
         </p>
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 flex-wrap">
           {props.project.technologies.map((tech: string) => (
             <li className="font-bold text-dark-green dark:text-light">
               {tech.toUpperCase()}

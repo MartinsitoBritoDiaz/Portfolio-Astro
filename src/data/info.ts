@@ -158,7 +158,7 @@ export const info = {
       {
         name: "Personal Portfolio",
         description: "Personal portfolio where I show all my skills and personal projects that I made. This portfolio is my first project using Astro JS Framework.",
-        technologies: ["ASTRO", "Tailwind", "React", "TS"],
+        technologies: ["ASTRO", "Tailwind", "React", "Typescript"],
         url: "https://astro.build/",
         code: "https://github.com/MartinsitoBritoDiaz/Portfolio-Astro",
         liveSite: "https://martinsitobd.netlify.app/",
@@ -188,7 +188,7 @@ export const info = {
       {
         name: "Calendar APP",
         description: "Web application to manage events and keeps track on them, this project is part of a web development course in Udemy by Fernando Herrera.",
-        technologies: ["MongoDB", "Express","React", "Node"],
+        technologies: ["Mongo", "Express","React", "Node"],
         url: "https://www.udemy.com/course/react-cero-experto/",
         code: "https://github.com/MartinsitoBritoDiaz/CalendarApp",
         liveSite: "https://calendar-mbd.vercel.app/",
