@@ -26,16 +26,6 @@ export const info = {
       certificationNumber: "85E4Q2-6D1F65",
       verificationUrl: "https://learn.microsoft.com/en-us/users/MartinsitoBritoDiaz-9963/credentials/84709C390190CBEB",
       logo: "/assets/images/microsoft-certified-fundamentals-badge.webp"
-    },
-    {
-      title: "DH Solutions",
-      description: "Puerto Rico",
-      earnedOn: "Aug 2024",
-      expiresOn: "",
-      credentialID: "84709C390190CBEB",
-      certificationNumber: "85E4Q2-6D1F65",
-      verificationUrl: "https://learn.microsoft.com/en-us/users/MartinsitoBritoDiaz-9963/credentials/84709C390190CBEB",
-      logo: "/assets/images/microsoft-certified-fundamentals-badge.webp"
     }
   ],
   courses:[
