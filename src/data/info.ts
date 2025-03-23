@@ -1,11 +1,11 @@
 export const info = {
   name: "Martinsito Brito Diaz",
-  degree: "Systems Engineer",
-  "short-description": "Throughout my career, I've honed my skills in ASP .NET C#, React TS, and Azure. My experience spans cloud projects on Azure and proficiency with Umbraco CMS. I specialize in crafting solutions with ASP .NET and React TS, emphasizing clean code and clean architecture.",
-  description: "Welcome to Martinsito's Software Engineer Portfolio. Explore my projects, skills, and experience in software development. Throughout my career, I've honed my skills in ASP .NET C#, React TS, and Azure. My experience spans cloud projects on Azure and proficiency with Umbraco CMS. I specialize in crafting solutions with ASP .NET and React TS, emphasizing clean code and clean architecture. I take pride in my technical expertise, analytical and problem-solving skills, and ability to create robust and efficient solutions that meet business needs. As someone who is committed to staying up-to-date with the latest industry trends, I'm constantly seeking out new challenges and opportunities for growth. ",
+  degree: "Software Engineer",
+  "short-description": "Throughout my career, I’ve developed strong expertise in ASP.NET C#, React with TypeScript, and Azure. I have hands-on experience delivering cloud-based solutions and working with Umbraco CMS. My focus is on building scalable, maintainable applications that follow clean code and clean architecture principles.",
+  description: "Welcome to Martinsito's Software Engineer Portfolio. Dive into my projects, skills, and professional experience in modern software development. I specialize in ASP.NET C#, React with TypeScript, and Azure, with hands-on experience delivering scalable cloud solutions and content-driven applications using Umbraco CMS. My approach emphasizes clean code, clean architecture, and creating solutions that meet real business needs. I take pride in my technical proficiency, problem-solving mindset, and ability to build robust, efficient systems. Passionate about continuous learning and staying current with industry trends, I’m always ready to take on new challenges and grow as a developer.",
   profile: "/assets/images/profile-foto.jpeg",
   hobbies: "I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. ",
-  aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 23 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
+  aboutMe: "My name is Martinsito Brito Diaz, and I’m a 24-year-old Software Engineer based in the Dominican Republic. My passion for development began when I was just fourteen, writing my first lines of code in high school. Since then, I’ve dedicated myself to mastering technologies like ASP.NET C#, React with TypeScript, and Azure. I'm constantly exploring new tools and challenges to grow as a developer. Whether it's building scalable solutions with clean architecture or crafting smooth user experiences with modern frameworks, I take pride in delivering quality work that solves real-world problems.",
   certifications:[
     {
       title: "Umbraco Professional",
@@ -120,7 +120,7 @@ export const info = {
       company: "Camsoft SRL",
       role: "Software Engineer Jr.",
       duration: "Oct. 2022 - Jun. 2023",
-      description:"As a Software Engineer at Camsoft, I excelled in both front-end and back-end roles, ensuring the delivery of top-notch web applications. Key contributions include:",
+      description: "During my time at Camsoft, I worked across the full stack, building high-quality web applications. I focused on creating dynamic user interfaces in React with TypeScript and implemented clean, maintainable backend services using ASP.NET C#.",
       work: [
         {
           exp: "Frontend Mastery: Orchestrated the creation of React-based UI components with Typescript, DevExtreme, transforming designs into seamless and interactive user interfaces."
@@ -137,6 +137,7 @@ export const info = {
       company: "Soluciones Almonte Gil",
       role: "Web Developer (Internship)",
       duration: "Jan. 2021 - May. 2021",
+      description: "At Soluciones Almonte Gil, I took part in key web projects during my internship. I built a dynamic ASP.NET 5 web application using Blazor and C#, and developed a static website from scratch based on Adobe XD mockups.",
       work: [
         {
           exp: "Developed a web application on ASP Dot NET 5, Blazor and C#, in this project I learn how to create web services, API and handle data with web scraping."
@@ -151,6 +152,7 @@ export const info = {
       company: "Universidad Católica Nordestana",
       role: "Back End (Internship)",
       duration: "Oct. 2019 - March 2020",
+      description: "As an intern at UCNE, I contributed to backend systems in C# and SQL Server, supporting data processing and communication across the university. I also provided hands-on IT support and helped establish a new tech lab for a local school.",
       work: [
         {
           exp: "Collaborated in the development group of a server side application, that gets data to manage, analyze and send it, as a valuable information to all the employees in the company. This project was made using C#, SQL Server."
