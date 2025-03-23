@@ -14,7 +14,7 @@ export const info = {
       expiresOn: "Mar 2027",
       credentialID: "",
       certificationNumber: "",
-      verificationUrl: "https://www.linkedin.com/in/martinsito-brito-diaz-ab4a48213/",
+      verificationUrl: "https://umbraco.com/training/certified-developers/developer/?uid=42848",
       logo: "/assets/images/Umbraco-Professional.webp"
     },
     {
