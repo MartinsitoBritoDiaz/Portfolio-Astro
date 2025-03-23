@@ -8,10 +8,20 @@ export const info = {
   aboutMe: "My name is Martinsito Brito Diaz, I currently live in the Dominican Republic. I'm a young man who is always looking for new oportunities. I am 23 years old, at the age of fourteen, it was my first time programming while I was at highschool, since that time I have been loving this area. ",
   certifications:[
     {
+      title: "Umbraco Professional",
+      description: "Umbraco Certified",
+      earnedOn: "Mar 2025",
+      expiresOn: "Mar 2027",
+      credentialID: "",
+      certificationNumber: "",
+      verificationUrl: "https://www.linkedin.com/in/martinsito-brito-diaz-ab4a48213/",
+      logo: "/assets/images/Umbraco-Professional.webp"
+    },
+    {
       title: "Azure Developer Associate",
       description: "Microsoft Certified",
-      earnedOn: "Mar 2024",
-      expiresOn: "Mar 2025",
+      earnedOn: "Mar 2025",
+      expiresOn: "Mar 2026",
       credentialID: "D6DAADA848D27973",
       certificationNumber: "D7TBDB-9651A0",
       verificationUrl: "https://learn.microsoft.com/en-us/users/martinsitobritodiaz-9963/credentials/d6daada848d27973",
