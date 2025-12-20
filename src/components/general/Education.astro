@@ -1,18 +1,73 @@
+---
+const educationData = [
+  {
+    degree: "Systems Engineer",
+    institution: "Universidad Católica Nordestana",
+    period: "2017 - 2021",
+    icon: "🎓"
+  },
+  {
+    degree: "Information Technology",
+    institution: "Politecnico Manuel Salomé Taveras",
+    period: "2013 - 2017",
+    icon: "📚"
+  }
+];
+---
 
-<div class="my-8">
-    <h3 class="text-dark dark:text-light font-bold text-xl">Education</h3>
+<section class="education-section my-16 sm:my-12" aria-labelledby="education-heading">
+  <h2 
+    id="education-heading"
+    class="text-3xl sm:text-4xl font-bold text-dark dark:text-light mb-10 relative inline-block"
+  >
+    <span class="relative z-10">Education</span>
+    <span class="absolute bottom-0 left-0 w-16 h-1 bg-dark-green dark:bg-light-green rounded-full"></span>
+  </h2>
 
-    <div class="text-dark dark:text-light my-2 flex ">
-      <div class="ml-8">
-        <p class="font-bold text-lg">Systems Engineer</p>
-        <h3 class=" font-bold text-lg">Universidad Católica Nordestana<span class="font-light text-sm pl-3">2017 - 2021</span></h3>
-      </div>
+  <div class="relative">
+    <!-- Timeline line (desktop only) -->
+    <div class="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-dark-green via-light-green to-transparent dark:from-light-green dark:via-dark-green"></div>
+
+    <div class="space-y-8 lg:space-y-12">
+      {educationData.map((edu, index) => (
+        <article 
+          class="relative group"
+          role="article"
+          aria-label={`${edu.degree} at ${edu.institution}`}
+        >
+          <!-- Timeline dot -->
+          <div class="hidden lg:flex absolute left-0 top-6 items-center justify-center w-16 h-16">
+            <div class="relative z-10 w-4 h-4 rounded-full bg-dark-green dark:bg-light-green ring-4 ring-light dark:ring-dark transition-transform duration-300 group-hover:scale-125"></div>
+          </div>
+
+          <!-- Education Card -->
+          <div class="lg:ml-20 relative">
+            <div class="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                <div class="flex-1 space-y-3">
+                  <div class="flex items-start gap-4">
+                    <span class="text-3xl flex-shrink-0" role="img" aria-label="Education icon">{edu.icon}</span>
+                    <div class="flex-1">
+                      <h3 class="text-xl sm:text-2xl font-bold text-dark dark:text-light mb-2">
+                        {edu.degree}
+                      </h3>
+                      <p class="text-lg sm:text-xl font-semibold text-dark-green dark:text-light-green mb-1">
+                        {edu.institution}
+                      </p>
+                      <time 
+                        class="text-sm sm:text-base text-light-green dark:text-light-green/80 font-medium"
+                        datetime={edu.period.split(' - ')[0]}
+                      >
+                        {edu.period}
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
-    <br>
-    <div class="text-dark dark:text-light my-2 flex ">
-      <div class="ml-8">
-        <p class="font-bold text-lg">Information Technology</p>
-        <h3 class=" font-bold text-lg">Politecnico Manuel Salomé Taveras<span class="font-light text-sm pl-3">2013 - 2017</span></h3>
-      </div>
-    </div>
-</div>
+  </div>
+</section>

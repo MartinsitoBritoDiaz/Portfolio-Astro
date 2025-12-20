@@ -2,26 +2,90 @@
 import { info } from '@data';
 ---
 
+<section class="experience-section my-16 sm:my-12" aria-labelledby="experience-heading">
+  <h2 
+    id="experience-heading"
+    class="text-3xl sm:text-4xl font-bold text-dark dark:text-light mb-10 relative inline-block"
+  >
+    <span class="relative z-10">Professional Experience</span>
+    <span class="absolute bottom-0 left-0 w-16 h-1 bg-dark-green dark:bg-light-green rounded-full"></span>
+  </h2>
 
-<div class="my-8">
-    <h3 class="text-dark dark:text-light font-bold text-xl">Experience</h3>
+  <div class="relative">
+    <!-- Timeline line (desktop only) -->
+    <div class="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-dark-green via-light-green to-transparent dark:from-light-green dark:via-dark-green"></div>
 
-    {
-      info.experiences.map((data) => (
-        <div class="text-dark dark:text-light my-10 flex gap-y-5">
-        <div class="border-l-4 border-dark-green h-fit pl-8">
-          <p class="font-bold text-lg">{data.role}</p>
-          <h3 class=" font-bold text-md text-light-green dark:text-light">{data.company} <span class="font-light text-sm pl-3">{data.duration}</span></h3>
-          { data.description != null ? <p class="mt-2 mb-2">{data.description}</p> : "" }
-          <ul class="list-disc list-inside flex flex-col gap-y-2">
-            {
-              data.work.map((work) => (
-                <li>{work.exp}</li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-      ))
-    }
+    <div class="space-y-8 lg:space-y-12">
+      {info.experiences.map((data, index) => (
+        <article 
+          class="relative group"
+          role="article"
+          aria-label={`${data.role} at ${data.company}`}
+        >
+          <!-- Timeline dot -->
+          <div class="hidden lg:flex absolute left-0 top-6 items-center justify-center w-16 h-16">
+            <div class="relative z-10 w-4 h-4 rounded-full bg-dark-green dark:bg-light-green ring-4 ring-light dark:ring-dark transition-transform duration-300 group-hover:scale-125"></div>
+          </div>
+
+          <!-- Experience Card -->
+          <div class="lg:ml-20 relative">
+            <div class="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40">
+              <!-- Header -->
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-bold text-dark dark:text-light mb-1">
+                    {data.role}
+                  </h3>
+                  <p class="text-lg sm:text-xl font-semibold text-dark-green dark:text-light-green mb-2">
+                    {data.company}
+                  </p>
+                  <time 
+                    class="inline-flex items-center gap-1 text-sm sm:text-base text-light-green dark:text-light-green/80 font-medium"
+                  >
+                    <svg 
+                      class="w-4 h-4" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {data.duration}
+                  </time>
+                </div>
+              </div>
+
+              <!-- Description -->
+              {data.description && (
+                <p class="text-base sm:text-lg text-dark/80 dark:text-light/80 mb-6 leading-relaxed">
+                  {data.description}
+                </p>
+              )}
+
+              <!-- Responsibilities -->
+              {data.work && data.work.length > 0 && (
+                <div class="space-y-3">
+                  <h4 class="text-sm font-semibold text-dark-green dark:text-light-green uppercase tracking-wide">
+                    Key Responsibilities
+                  </h4>
+                  <ul class="space-y-3" role="list">
+                    {data.work.map((work, workIndex) => (
+                      <li 
+                        class="flex gap-3 text-base sm:text-lg text-dark/90 dark:text-light/90 leading-relaxed"
+                        role="listitem"
+                      >
+                        <span class="flex-shrink-0 w-2 h-2 rounded-full bg-dark-green dark:bg-light-green mt-2" aria-hidden="true"></span>
+                        <span>{work.exp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
   </div>
+</section>
