@@ -1,53 +1,75 @@
-import { info } from "@data";
 import { ProjectItem } from "./ProjectItem";
 import { useState, useMemo, useEffect } from "react";
 import { IProject } from "@types";
 
-export const PaginationChanges = () => {
+interface PaginationChangesProps {
+  projects: IProject[];
+}
+
+export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => {
   const pageSize = 9;
   
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTech, setSelectedTech] = useState<string>("all");
   const [showDeployedOnly, setShowDeployedOnly] = useState(false);
+  const [projectTypeFilter, setProjectTypeFilter] = useState<"all" | "client" | "personal">("all");
+
+  // Ensure we have projects data
+  const projectsList = Array.isArray(projects) ? projects : [];
 
   // Get all unique technologies from projects
   const allTechnologies = useMemo(() => {
     const techSet = new Set<string>();
-    info.work.projects.forEach((project) => {
-      project.technologies.forEach((tech) => techSet.add(tech.toLowerCase()));
+    projectsList.forEach((project) => {
+      if (project.technologies && Array.isArray(project.technologies)) {
+        project.technologies.forEach((tech) => {
+          if (tech && typeof tech === 'string') {
+            techSet.add(tech.toLowerCase());
+          }
+        });
+      }
     });
     return Array.from(techSet).sort();
-  }, []);
+  }, [projectsList]);
 
   // Filter projects based on search, technology, and deployment status
   const filteredProjects = useMemo(() => {
-    return info.work.projects.filter((project) => {
+    if (!projectsList || projectsList.length === 0) return [];
+    
+    return projectsList.filter((project) => {
+      // Search filter
       const matchesSearch =
         searchQuery === "" ||
-        project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.technologies.some((tech) =>
-          tech.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        (project.name && project.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (project.description && project.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (project.technologies && project.technologies.some((tech) =>
+          tech && tech.toLowerCase().includes(searchQuery.toLowerCase())
+        ));
 
+      // Technology filter
       const matchesTech =
         selectedTech === "all" ||
-        project.technologies.some(
-          (tech) => tech.toLowerCase() === selectedTech.toLowerCase()
-        );
+        (project.technologies && project.technologies.some(
+          (tech) => tech && tech.toLowerCase() === selectedTech.toLowerCase()
+        ));
 
+      // Deployment filter
       const matchesDeployment =
         !showDeployedOnly || project.isDeploy === true;
 
-      return matchesSearch && matchesTech && matchesDeployment;
-    });
-  }, [searchQuery, selectedTech, showDeployedOnly]);
+      // Project type filter
+      const isClientProject = project.clientProject === true || project.projectType === "client";
+      const isPersonalProject = !project.clientProject && project.projectType !== "client";
+      
+      const matchesProjectType =
+        projectTypeFilter === "all" ||
+        (projectTypeFilter === "client" && isClientProject) ||
+        (projectTypeFilter === "personal" && isPersonalProject);
 
-  // Reset to page 1 when filters change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchQuery, selectedTech, showDeployedOnly]);
+      return matchesSearch && matchesTech && matchesDeployment && matchesProjectType;
+    });
+  }, [projectsList, searchQuery, selectedTech, showDeployedOnly, projectTypeFilter]);
 
   const totalPages = Math.ceil(filteredProjects.length / pageSize);
   const startIndex = (currentPage - 1) * pageSize;
@@ -58,30 +80,48 @@ export const PaginationChanges = () => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
       // Scroll to top of projects section
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    e.preventDefault();
+    e.stopPropagation();
+    const value = e.target.value;
+    setSearchQuery((prev) => value);
+    setCurrentPage(1);
   };
 
   const handleTechFilter = (tech: string) => {
-    setSelectedTech(tech);
+    setSelectedTech((prev) => tech);
+    setCurrentPage((prev) => 1);
   };
 
   const handleDeploymentFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setShowDeployedOnly(e.target.checked);
+    e.preventDefault();
+    e.stopPropagation();
+    const checked = e.target.checked;
+    setShowDeployedOnly((prev) => checked);
+    setCurrentPage((prev) => 1);
+  };
+
+  const handleProjectTypeFilter = (type: "all" | "client" | "personal") => {
+    setProjectTypeFilter((prev) => type);
+    setCurrentPage((prev) => 1);
   };
 
   const clearFilters = () => {
-    setSearchQuery("");
-    setSelectedTech("all");
-    setShowDeployedOnly(false);
+    setSearchQuery((prev) => "");
+    setSelectedTech((prev) => "all");
+    setShowDeployedOnly((prev) => false);
+    setProjectTypeFilter((prev) => "all");
+    setCurrentPage((prev) => 1);
   };
 
   const hasActiveFilters =
-    searchQuery !== "" || selectedTech !== "all" || showDeployedOnly;
+    searchQuery !== "" || selectedTech !== "all" || showDeployedOnly || projectTypeFilter !== "all";
 
   return (
     <section className="projects-content" aria-labelledby="projects-content-heading">
@@ -120,8 +160,14 @@ export const PaginationChanges = () => {
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery("")}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-light-green dark:text-light-green/70 hover:text-dark-green dark:hover:text-light-green transition-colors"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setSearchQuery("");
+                  setCurrentPage(1);
+                }}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-light-green dark:text-light-green/70 hover:text-dark-green dark:hover:text-light-green transition-colors cursor-pointer"
                 aria-label="Clear search"
               >
                 <svg
@@ -144,55 +190,124 @@ export const PaginationChanges = () => {
         </div>
 
         {/* Filters Row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          {/* Technology Filter */}
+        <div className="flex flex-col gap-4">
+          {/* Project Type Filter */}
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-sm font-semibold text-dark dark:text-light">
-              Filter by technology:
+              Project type:
             </span>
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => handleTechFilter("all")}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green ${
-                  selectedTech === "all"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleProjectTypeFilter("all");
+                }}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                  projectTypeFilter === "all"
                     ? "bg-dark-green dark:bg-light-green text-white"
                     : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
                 }`}
-                aria-pressed={selectedTech === "all"}
+                aria-pressed={projectTypeFilter === "all"}
               >
-                All
+                All Projects
               </button>
-              {allTechnologies.slice(0, 8).map((tech) => (
-                <button
-                  key={tech}
-                  onClick={() => handleTechFilter(tech)}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green ${
-                    selectedTech.toLowerCase() === tech.toLowerCase()
-                      ? "bg-dark-green dark:bg-light-green text-white"
-                      : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
-                  }`}
-                  aria-pressed={selectedTech.toLowerCase() === tech.toLowerCase()}
-                >
-                  {tech.toUpperCase()}
-                </button>
-              ))}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleProjectTypeFilter("client");
+                }}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                  projectTypeFilter === "client"
+                    ? "bg-blue-600 dark:bg-blue-500 text-white"
+                    : "bg-white dark:bg-[#1a1a1a] text-blue-600 dark:text-blue-400 border-2 border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600"
+                }`}
+                aria-pressed={projectTypeFilter === "client"}
+              >
+                Client Projects
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleProjectTypeFilter("personal");
+                }}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                  projectTypeFilter === "personal"
+                    ? "bg-dark-green dark:bg-light-green text-white"
+                    : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
+                }`}
+                aria-pressed={projectTypeFilter === "personal"}
+              >
+                Personal Projects
+              </button>
             </div>
           </div>
 
-          {/* Deployment Filter */}
-          <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={showDeployedOnly}
-                onChange={handleDeploymentFilter}
-                className="w-4 h-4 text-dark-green dark:text-light-green border-dark-green/30 dark:border-light-green/30 rounded focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green"
-                aria-label="Show only deployed projects"
-              />
-              <span className="text-sm font-medium text-dark dark:text-light">
-                Live demos only
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            {/* Technology Filter */}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-sm font-semibold text-dark dark:text-light">
+                Filter by technology:
               </span>
-            </label>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleTechFilter("all");
+                  }}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                    selectedTech === "all"
+                      ? "bg-dark-green dark:bg-light-green text-white"
+                      : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
+                  }`}
+                  aria-pressed={selectedTech === "all"}
+                >
+                  All
+                </button>
+                {allTechnologies.slice(0, 8).map((tech) => (
+                  <button
+                    key={tech}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleTechFilter(tech);
+                    }}
+                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                      selectedTech.toLowerCase() === tech.toLowerCase()
+                        ? "bg-dark-green dark:bg-light-green text-white"
+                        : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
+                    }`}
+                    aria-pressed={selectedTech.toLowerCase() === tech.toLowerCase()}
+                  >
+                    {tech.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Deployment Filter */}
+            <div className="flex items-center gap-3">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={showDeployedOnly}
+                  onChange={handleDeploymentFilter}
+                  className="w-4 h-4 text-dark-green dark:text-light-green border-dark-green/30 dark:border-light-green/30 rounded focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green"
+                  aria-label="Show only deployed projects"
+                />
+                <span className="text-sm font-medium text-dark dark:text-light">
+                  Live demos only
+                </span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -212,14 +327,24 @@ export const PaginationChanges = () => {
                 Tech: {selectedTech.toUpperCase()}
               </span>
             )}
+            {projectTypeFilter !== "all" && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 text-sm bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full">
+                Type: {projectTypeFilter === "client" ? "Client" : "Personal"}
+              </span>
+            )}
             {showDeployedOnly && (
               <span className="inline-flex items-center gap-1 px-3 py-1 text-sm bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full">
                 Live demos
               </span>
             )}
             <button
-              onClick={clearFilters}
-              className="text-sm font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                clearFilters();
+              }}
+              className="text-sm font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded cursor-pointer"
             >
               Clear all
             </button>
@@ -230,9 +355,9 @@ export const PaginationChanges = () => {
         <div className="mt-4 text-sm text-dark/70 dark:text-light/70">
           Showing {paginatedProjects.length} of {filteredProjects.length} project
           {filteredProjects.length !== 1 ? "s" : ""}
-          {filteredProjects.length !== info.work.projects.length && (
+          {filteredProjects.length !== projectsList.length && (
             <span className="ml-1">
-              (filtered from {info.work.projects.length} total)
+              (filtered from {projectsList.length} total)
             </span>
           )}
         </div>
@@ -302,6 +427,7 @@ export const PaginationChanges = () => {
                           return (
                             <button
                               key={page}
+                              type="button"
                               onClick={() => handlePageChange(page)}
                               className={`min-w-[2.5rem] px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green ${
                                 currentPage === page
@@ -383,6 +509,7 @@ export const PaginationChanges = () => {
           </p>
           {hasActiveFilters && (
             <button
+              type="button"
               onClick={clearFilters}
               className="inline-flex items-center gap-2 px-6 py-3 bg-dark-green dark:bg-light-green text-white font-semibold rounded-lg hover:bg-dark-green/90 dark:hover:bg-light-green/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green"
             >

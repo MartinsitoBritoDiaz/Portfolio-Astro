@@ -18,4 +18,12 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
   adapter: netlify(),
+  vite: {
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime'],
+    },
+    ssr: {
+      noExternal: ['@astrojs/react'],
+    },
+  },
 });

@@ -89,19 +89,44 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
       {/* Content Section */}
       <div className="p-6">
         <div className="mb-4">
-          <h3 
-            id={`project-item-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
-            className="text-xl sm:text-2xl font-bold text-dark dark:text-light mb-2 group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-200"
-          >
-            <a
-              href={project.isDeploy ? project.liveSite : project.code}
-              target={project.isDeploy ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className="hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+          <div className="flex items-start justify-between gap-3 mb-2">
+            <h3 
+              id={`project-item-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
+              className="text-xl sm:text-2xl font-bold text-dark dark:text-light group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-200 flex-1"
             >
-              {project.name}
-            </a>
-          </h3>
+              <a
+                href={project.isDeploy ? project.liveSite : project.code}
+                target={project.isDeploy ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+              >
+                {project.name}
+              </a>
+            </h3>
+            {/* Project Type Badge */}
+            {(project.clientProject || project.projectType === "client") ? (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full border border-blue-200 dark:border-blue-800 flex-shrink-0" title="Client Project">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+                Client
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full border border-dark-green/20 dark:border-light-green/30 flex-shrink-0" title="Personal Project">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Personal
+              </span>
+            )}
+          </div>
+          
+          {/* Client Name (if client project) */}
+          {project.clientName && (
+            <p className="text-sm text-dark-green dark:text-light-green font-medium mb-2">
+              For {project.clientName}
+            </p>
+          )}
           
           <p className="text-base text-dark/80 dark:text-light/80 leading-relaxed line-clamp-2">
             {project.description}

@@ -33,6 +33,12 @@ export interface IProject {
     code: string,
     liveSite: string,
     image: string,
+    projectType?: "client" | "personal",
+    clientProject?: boolean,
+    clientId?: string,
+    clientName?: string,
+    role?: string,
+    impact?: string,
 }
 
 export interface ICourse {
@@ -50,4 +56,23 @@ export interface ICertification {
     certificationNumber: string,
     verificationUrl: string,
     logo: string
+}
+
+export interface IClient {
+    id: string,
+    name: string,
+    logo: string,
+    industry: string,
+    website?: string,
+    description?: string,
+    engagementContext?: string,
+    projects: string[], // Array of project names that belong to this client
+}
+
+export interface IClientProps {
+    client: IClient,
+}
+
+export interface IClientsProps {
+    clients: IClient[],
 }

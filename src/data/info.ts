@@ -196,6 +196,12 @@ export const info = {
         liveSite: "/",
         isDeploy: false,
         image: "/assets/images/project-hardware-store.webp",
+        projectType: "client",
+        clientProject: true,
+        clientId: "evopoint-solutions",
+        clientName: "Evopoint Solutions",
+        role: "Full-Stack Developer",
+        impact: "Developed a comprehensive Point-of-Sales system with multiple modules, improving inventory management and sales tracking capabilities.",
       },      
       {
         name: "Calendar APP",
@@ -366,6 +372,28 @@ export const info = {
       
     ]
   },
+  clients: [
+    {
+      id: "evopoint-solutions",
+      name: "Evopoint Solutions",
+      logo: "/assets/images/logo.png", // Update with actual client logo
+      industry: "Technology Solutions",
+      website: "https://evopoint.com", // Update with actual website
+      description: "Leading technology solutions provider specializing in cloud-based applications and content management systems.",
+      engagementContext: "Intermediate Software Developer - Developing Umbraco CMS solutions, Azure cloud applications, and ASP.NET APIs.",
+      projects: ["Hardware Store"], // Projects linked to this client
+    },
+    {
+      id: "camsoft-srl",
+      name: "Camsoft SRL",
+      logo: "/assets/images/logo.png", // Update with actual client logo
+      industry: "Software Development",
+      website: "https://camsoft.com", // Update with actual website
+      description: "Full-stack software development company focused on enterprise web applications.",
+      engagementContext: "Software Engineer Jr. - Building React-based UI components and ASP.NET C# backend services.",
+      projects: [], // Add project names here when available
+    },
+  ],
   contact: {
     twitter: "https://twitter.com/martinbd09",
     instagram: "https://www.instagram.com/martinbd09/",

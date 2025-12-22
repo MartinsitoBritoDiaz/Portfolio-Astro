@@ -36,9 +36,27 @@ export const Project = ({ project }: ProjectProps) => {
       {/* Content Container */}
       <div className="project-content">
         <div className="project-content-inner">
-          <p className="project-label">
-            Featured Project
-          </p>
+          <div className="flex items-center gap-2 mb-2">
+            <p className="project-label">
+              Featured Project
+            </p>
+            {/* Project Type Badge */}
+            {(project.clientProject || project.projectType === "client") ? (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full border border-blue-200 dark:border-blue-800" title="Client Project">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                </svg>
+                Client
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full border border-dark-green/20 dark:border-light-green/30" title="Personal Project">
+                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                Personal
+              </span>
+            )}
+          </div>
           
           <h3 
             id={`project-${project.name.toLowerCase().replace(/\s+/g, '-')}`}
@@ -53,6 +71,13 @@ export const Project = ({ project }: ProjectProps) => {
               {project.name}
             </a>
           </h3>
+          
+          {/* Client Name (if client project) */}
+          {project.clientName && (
+            <p className="text-sm text-dark-green dark:text-light-green font-medium mb-2">
+              For {project.clientName}
+            </p>
+          )}
           
           <p className="project-description">
             {project.description}
