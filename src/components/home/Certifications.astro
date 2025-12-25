@@ -5,17 +5,59 @@ import { ICertification, ICertificationsProps } from "@types";
 const { certifications } = Astro.props as ICertificationsProps;
 ---
 
-<div class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green my-28">
-  <h2 class="py-5 dark:text-light text-dark-green text-3xl font-bold my-10">
-    Certifications
-  </h2>
-  <div
-    class="flex flex-wrap justify-around gap-y-10 gap-x-4 mx-auto lg:gap-x-8 lg:gap-y-8"
-  >
-    {
-      certifications.map((certification: ICertification) => (
-        <Certification {...certification} />
-      ))
-    }
+<section class="certifications-section py-16 sm:py-20 lg:py-24" aria-labelledby="certifications-heading">
+  <div class="w-full">
+    <!-- Section Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 
+        id="certifications-heading"
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark dark:text-light mb-4 relative inline-block"
+      >
+        <span class="relative z-10">Professional Certifications</span>
+        <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-dark-green to-transparent dark:via-light-green rounded-full"></span>
+      </h2>
+      <p class="text-lg sm:text-xl text-dark/80 dark:text-light/80 max-w-2xl mx-auto mt-4">
+        Validated expertise in modern technologies and cloud platforms
+      </p>
+    </div>
+
+    <!-- Certifications Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+      {
+        certifications.map((certification: ICertification, index) => (
+          <div 
+            class="certification-item"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            <Certification {...certification} />
+          </div>
+        ))
+      }
+    </div>
   </div>
-</div>
+</section>
+
+<style>
+  .certification-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .certification-item {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import { IClient, IProject } from "@types";
+import ClientProject from "./ClientProject.astro";
+
+interface Props {
+  client: IClient;
+  projects: IProject[];
+}
+
+const { client, projects } = Astro.props;
+---
+
+<article 
+  class="client-card group bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg border border-dark-green/10 dark:border-light-green/20 hover:shadow-xl transition-all duration-300"
+  role="article"
+  aria-labelledby={`client-${client.id}`}
+>
+  <!-- Client Header -->
+  <div class="flex flex-col sm:flex-row sm:items-start gap-6 mb-8">
+    <!-- Logo -->
+    <div class="flex-shrink-0">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+        <div class="relative bg-white dark:bg-[#252525] p-4 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+          <img
+            src={client.logo || "/assets/images/logo.png"}
+            alt={`${client.name} logo`}
+            class="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+            loading="lazy"
+            onerror="this.src='/assets/images/logo.png'"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Info -->
+    <div class="flex-1">
+      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+        <div>
+          <h2 
+            id={`client-${client.id}`}
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark dark:text-light mb-2"
+          >
+            {client.name}
+          </h2>
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-semibold bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              {client.industry}
+            </span>
+            {client.website && (
+              <a
+                href={client.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+                aria-label={`Visit ${client.name} website`}
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Visit Website
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      {client.description && (
+        <p class="text-base sm:text-lg text-dark/80 dark:text-light/80 leading-relaxed mb-4">
+          {client.description}
+        </p>
+      )}
+
+      <!-- Engagement Context -->
+      {client.engagementContext && (
+        <div class="bg-dark-green/5 dark:bg-light-green/10 border-l-4 border-dark-green dark:border-light-green rounded-r-lg p-4 mb-4">
+          <p class="text-sm font-semibold text-dark-green dark:text-light-green mb-1">
+            My Role & Engagement
+          </p>
+          <p class="text-sm text-dark/80 dark:text-light/80">
+            {client.engagementContext}
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Projects Section - Only show if there are projects -->
+  {projects.length > 0 && (
+    <div class="border-t border-dark-green/10 dark:border-light-green/20 pt-8">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl sm:text-2xl font-bold text-dark dark:text-light">
+          Projects Delivered
+        </h3>
+        <span class="text-sm text-dark/70 dark:text-light/70">
+          {projects.length} {projects.length === 1 ? "project" : "projects"}
+        </span>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project) => (
+          <ClientProject project={project} />
+        ))}
+      </div>
+    </div>
+  )}
+</article>
+

@@ -2,22 +2,89 @@
 import { Project } from "@components";
 import { IHomeProjectsProps } from "@types";
 
-
-
 const { projects } = Astro.props as IHomeProjectsProps;
+const featuredProjects = projects.slice(0, 4);
 ---
 
-<div class="h-100 w-full before:dark:bg-[#202020] before:bg-light-green my-28">
-    <h2
-      class="py-5 dark:text-light text-dark-green text-3xl font-bold  my-10"
-    >
-      Some of my projects
-    </h2>
-    <div class="grid gap-y-10 mx-auto">
+<section class="projects-section py-16 sm:py-20 lg:py-24" aria-labelledby="projects-heading">
+  <div class="w-full">
+    <!-- Section Header -->
+    <div class="mb-12 sm:mb-16">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
+        <div>
+          <h2 
+            id="projects-heading"
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark dark:text-light mb-4 relative inline-block"
+          >
+            <span class="relative z-10">Featured Projects</span>
+            <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-dark-green to-transparent dark:via-light-green rounded-full"></span>
+          </h2>
+          <p class="text-lg sm:text-xl text-dark/80 dark:text-light/80 max-w-2xl mt-4">
+            A selection of my recent work showcasing modern web development practices
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="space-y-16 sm:space-y-20 lg:space-y-24">
       {
-        projects.slice(0, 4).map((project) => (
-          <Project project={ project } />
+        featuredProjects.map((project, index) => (
+          <div 
+            class="project-item"
+            style={`animation-delay: ${index * 150}ms`}
+          >
+            <Project project={project} />
+          </div>
         ))
       }
     </div>
+
+    <!-- Call to Action -->
+    <div class="mt-16 sm:mt-20 text-center">
+      <div class="inline-flex flex-col items-center gap-6 p-8 sm:p-10 bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-lg border border-dark-green/10 dark:border-light-green/20">
+        <h3 class="text-2xl sm:text-3xl font-bold text-dark dark:text-light">
+          Want to see more?
+        </h3>
+        <p class="text-base sm:text-lg text-dark/80 dark:text-light/80 max-w-md">
+          Explore all my projects, including full-stack applications, web components, and more.
+        </p>
+        <a 
+          href="/projects"
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-dark-green dark:bg-light-green text-white font-semibold rounded-lg hover:bg-dark-green/90 dark:hover:bg-light-green/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green"
+          aria-label="View all projects"
+        >
+          <span>View All Projects</span>
+          <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
   </div>
+</section>
+
+<style>
+  .project-item {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-item {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>

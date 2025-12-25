@@ -1,0 +1,107 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { info } from "@data";
+import ClientCard from "@components/clients/ClientCard.astro";
+import { IClient, IProject } from "@types";
+
+// Get all clients
+const clients = info.clients || [];
+
+// Helper function to get projects for a client
+const getClientProjects = (client: IClient): IProject[] => {
+  return info.work.projects.filter(
+    (project) => project.clientId === client.id || project.clientName === client.name
+  );
+};
+
+// Calculate statistics
+const totalClients = clients.length;
+const totalClientProjects = info.work.projects.filter(
+  (p) => p.clientProject === true || p.projectType === "client"
+).length;
+---
+
+<MainLayout>
+  <main class="clients-page">
+    <!-- Page Header -->
+    <header class="page-header mb-12 sm:mb-16">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark dark:text-light mb-4">
+        Clients & Partnerships
+      </h1>
+      <p class="text-lg sm:text-xl text-dark/80 dark:text-light/80 max-w-3xl leading-relaxed">
+        I've had the privilege of working with innovative companies and delivering 
+        solutions that drive business value. Each partnership has contributed to my 
+        growth as a software engineer and allowed me to tackle diverse challenges 
+        across different industries.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-4 text-sm sm:text-base text-dark/70 dark:text-light/70">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.196-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.196-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span>{totalClients} Clients</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>{totalClientProjects} Client Projects</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Clients Section -->
+    {clients.length > 0 ? (
+      <section class="clients-section" aria-labelledby="clients-heading">
+        <div class="space-y-12 sm:space-y-16 lg:space-y-20">
+          {clients.map((client) => {
+            const clientProjects = getClientProjects(client);
+            return (
+              <ClientCard client={client} projects={clientProjects} />
+            );
+          })}
+        </div>
+      </section>
+    ) : (
+      <div class="text-center py-16">
+        <svg
+          class="w-16 h-16 mx-auto text-light-green dark:text-light-green/50 mb-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a3 3 0 00-5.196-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.196-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+        <h3 class="text-xl font-bold text-dark dark:text-light mb-2">
+          No clients to display
+        </h3>
+        <p class="text-dark/70 dark:text-light/70">
+          Client information will appear here once added to the portfolio.
+        </p>
+      </div>
+    )}
+  </main>
+</MainLayout>
+
+<style>
+  .clients-page {
+    scroll-behavior: smooth;
+  }
+  
+  .clients-page section[id] {
+    scroll-margin-top: 2rem;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .clients-page {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+

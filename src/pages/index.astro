@@ -5,16 +5,42 @@ import Hero from "@components/home/Hero.astro";
 import HomeProjects from "@components/home/HomeProjects.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Certifications from "@components/home/Certifications.astro";
+import ClientLogos from "@components/home/ClientLogos.astro";
 ---
 
 <MainLayout>
-  <Hero
-    name={info.name.split(" ")[0]}
-    degree={info.degree}
-    about={info["short-description"]}
-  />
+  <main class="home-page">
+    <!-- Hero Section - First Impression & Value Proposition -->
+    <Hero
+      name={info.name.split(" ")[0]}
+      degree={info.degree}
+      about={info["short-description"]}
+    />
 
-  <Certifications certifications={info.certifications}/>
+    <!-- Certifications Section - Credibility & Trust -->
+    <Certifications certifications={info.certifications}/>
 
-  <HomeProjects projects={info.work.projects} />
+    <!-- Featured Projects Section - Portfolio Showcase -->
+    <HomeProjects projects={info.work.projects} />
+
+    <!-- Client Logos Section - Social Proof -->
+    <ClientLogos />
+  </main>
 </MainLayout>
+
+<style>
+  .home-page {
+    scroll-behavior: smooth;
+  }
+  
+  /* Smooth scroll offset for anchor links */
+  .home-page section[id] {
+    scroll-margin-top: 2rem;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .home-page {
+      scroll-behavior: auto;
+    }
+  }
+</style>

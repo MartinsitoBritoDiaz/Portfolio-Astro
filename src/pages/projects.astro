@@ -1,10 +1,54 @@
 ---
-
 import { PaginationChanges } from "@components/react/PaginationChanges";
 import MainLayout from "@layouts/MainLayout.astro";
+import { info } from "@data";
 ---
 
-<MainLayout>        
-  <h1 class="dark:text-light font-bold sm:text-3xl md:text-5xl my-10 mb-20">Projects</h1>
-  <PaginationChanges client:load />
+<MainLayout>
+  <main class="projects-page">
+    <!-- Page Header -->
+    <header class="page-header mb-12 sm:mb-16">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-dark dark:text-light mb-4">
+        My Projects
+      </h1>
+      <p class="text-lg sm:text-xl text-dark/80 dark:text-light/80 max-w-3xl leading-relaxed">
+        A comprehensive collection of my work, showcasing expertise in modern web development, 
+        cloud solutions, and full-stack applications. Each project demonstrates technical depth, 
+        problem-solving skills, and attention to detail.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-4 text-sm sm:text-base text-dark/70 dark:text-light/70">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>{info.work.projects.length} Projects</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+          <span>{info.work.projects.filter(p => p.isDeploy).length} Live Demos</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Projects Content -->
+    <PaginationChanges projects={info.work.projects} client:load />
+  </main>
 </MainLayout>
+
+<style>
+  .projects-page {
+    scroll-behavior: smooth;
+  }
+  
+  .projects-page section[id] {
+    scroll-margin-top: 2rem;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .projects-page {
+      scroll-behavior: auto;
+    }
+  }
+</style>

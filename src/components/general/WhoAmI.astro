@@ -2,29 +2,63 @@
 import { info } from '@data';
 ---
 
-<div class="flex sm:flex-col-reverse">
-    <div class="md:flex-1">
-  
-      <div class="my-10">
-        <h3 class="text-dark dark:text-light font-bold text-xl">Who am I?</h3>
-    
-        <div class="text-dark dark:text-light my-5 flex gap-y-5">
-          <div class="ml-8">
-            <p class="  text-lg">{info.aboutMe}</p>
-          </div>
-        </div>
-    
-        <h3 class="text-dark dark:text-light font-bold text-xl">Hobbies</h3>
-    
-        <div class="text-dark dark:text-light my-5 flex gap-y-5">
-          <div class="ml-8">
-            <p class="  text-lg">{info.hobbies}</p>
-          </div>
-        </div>
-        
+<section class="about-intro my-16 sm:my-12" aria-labelledby="about-heading">
+  <div class="flex flex-col lg:flex-row lg:items-start lg:gap-12 gap-8">
+    <!-- Profile Image Section -->
+    <div class="flex-shrink-0 lg:w-1/3 flex justify-center lg:justify-start">
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-dark-green to-light-green rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 blur-xl"></div>
+        <img 
+          width="320" 
+          height="320" 
+          src={info.profile} 
+          class="relative h-64 w-64 sm:h-80 sm:w-80 rounded-full object-cover shadow-lg ring-4 ring-dark-green/10 dark:ring-light-green/20 transition-transform duration-300 group-hover:scale-105" 
+          alt={`${info.name} profile photo`}
+          loading="eager"
+        />
       </div>
     </div>
-    <div class="md:flex-1 flex items-center justify-center">
-      <img width="100" height="100" src={info.profile} class="h-72 w-72 my-10 rounded-full" alt="Coding image" />
+
+    <!-- Content Section -->
+    <div class="flex-1 lg:w-2/3 space-y-8">
+      <!-- Who am I Section -->
+      <div class="space-y-4">
+        <h2 
+          id="about-heading"
+          class="text-3xl sm:text-4xl font-bold text-dark dark:text-light mb-6 relative inline-block"
+        >
+          <span class="relative z-10">Who am I?</span>
+          <span class="absolute bottom-0 left-0 w-16 h-1 bg-dark-green dark:bg-light-green rounded-full"></span>
+        </h2>
+        
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-base sm:text-lg leading-relaxed text-dark/90 dark:text-light/90 font-normal">
+            {info.aboutMe}
+          </p>
+        </div>
+      </div>
+
+      <!-- Hobbies Section -->
+      <div class="space-y-4 pt-6 border-t border-dark-green/10 dark:border-light-green/20">
+        <h3 class="text-2xl sm:text-3xl font-bold text-dark dark:text-light flex items-center gap-3">
+          <svg 
+            class="w-6 h-6 text-dark-green dark:text-light-green" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          Hobbies & Interests
+        </h3>
+        
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-base sm:text-lg leading-relaxed text-dark/90 dark:text-light/90 font-normal">
+            {info.hobbies}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
