@@ -20,10 +20,11 @@ const { project } = Astro.props;
     aria-label={`View ${project.name} project`}
   >
     <img
-      src={project.image}
+      src={project.image || "/assets/images/logo.png"}
       alt={`${project.name} project screenshot`}
       class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
       loading="lazy"
+      onerror="this.src='/assets/images/logo.png'"
     />
   </a>
 
@@ -91,19 +92,7 @@ const { project } = Astro.props;
 
     <!-- Action Links -->
     <div class="flex items-center gap-3 pt-2">
-      <a
-        href={project.code}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-1 text-xs font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
-        aria-label={`View ${project.name} source code`}
-      >
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-        Code
-      </a>
-      {project.isDeploy && (
+      {project.isDeploy && project.liveSite && (
         <a
           href={project.liveSite}
           target="_blank"

@@ -23,10 +23,11 @@ const { client, projects } = Astro.props;
         <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
         <div class="relative bg-white dark:bg-[#252525] p-4 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300">
           <img
-            src={client.logo}
+            src={client.logo || "/assets/images/logo.png"}
             alt={`${client.name} logo`}
             class="w-24 h-24 sm:w-32 sm:h-32 object-contain"
             loading="lazy"
+            onerror="this.src='/assets/images/logo.png'"
           />
         </div>
       </div>
@@ -88,8 +89,8 @@ const { client, projects } = Astro.props;
     </div>
   </div>
 
-  <!-- Projects Section -->
-  {projects.length > 0 ? (
+  <!-- Projects Section - Only show if there are projects -->
+  {projects.length > 0 && (
     <div class="border-t border-dark-green/10 dark:border-light-green/20 pt-8">
       <div class="flex items-center justify-between mb-6">
         <h3 class="text-xl sm:text-2xl font-bold text-dark dark:text-light">
@@ -105,12 +106,6 @@ const { client, projects } = Astro.props;
           <ClientProject project={project} />
         ))}
       </div>
-    </div>
-  ) : (
-    <div class="border-t border-dark-green/10 dark:border-light-green/20 pt-8">
-      <p class="text-center text-dark/70 dark:text-light/70 py-8">
-        Project details coming soon.
-      </p>
     </div>
   )}
 </article>
