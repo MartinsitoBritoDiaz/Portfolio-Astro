@@ -2,7 +2,7 @@
 import { info } from "@data";
 import { IHeroProps } from "@types";
 
-const { name, degree, about } = Astro.props as IHeroProps;
+const { name, degree, about, availableForOpportunities = false } = Astro.props as IHeroProps;
 ---
 
 <section class="hero-section min-h-[85vh] sm:min-h-[90vh] flex items-center py-12 sm:py-16 lg:py-20" aria-labelledby="hero-heading">
@@ -34,13 +34,15 @@ const { name, degree, about } = Astro.props as IHeroProps;
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-green dark:text-light-green">
               {degree}
             </h2>
-            <div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-dark-green/10 dark:bg-light-green/20 rounded-full">
-              <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-dark-green dark:bg-light-green opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-dark-green dark:bg-light-green"></span>
-              </span>
-              <span class="text-sm font-medium text-dark-green dark:text-light-green">Available for opportunities</span>
-            </div>
+            {availableForOpportunities && (
+              <div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-dark-green/10 dark:bg-light-green/20 rounded-full">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-dark-green dark:bg-light-green opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-dark-green dark:bg-light-green"></span>
+                </span>
+                <span class="text-sm font-medium text-dark-green dark:text-light-green">Available for opportunities</span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -75,12 +77,12 @@ const { name, degree, about } = Astro.props as IHeroProps;
         </div>
 
         <!-- Contact Info -->
-        <div class="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
-          <div class="flex items-center gap-3 text-base sm:text-lg">
-            <span class="font-semibold text-dark dark:text-light">Let's connect:</span>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-2">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg">
+            <span class="font-semibold text-dark dark:text-light whitespace-nowrap">Let's connect:</span>
             <a 
               href="mailto:martinsitobd@gmail.com" 
-              class="text-dark-green dark:text-light-green font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+              class="text-dark-green dark:text-light-green font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded break-all sm:break-normal"
               aria-label="Send email to martinsitobd@gmail.com"
             >
               martinsitobd@gmail.com

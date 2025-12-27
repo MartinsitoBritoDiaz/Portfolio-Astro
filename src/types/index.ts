@@ -8,6 +8,7 @@ export interface IHeroProps {
     name: string;
     degree: string;
     about: string;
+    availableForOpportunities?: boolean;
 }
 export interface ICertificationsProps {
     certifications: ICertification[];

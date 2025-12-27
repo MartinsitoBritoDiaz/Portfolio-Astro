@@ -8,8 +8,8 @@ const clients = info.clients || [];
 const clientsWithLogos = clients.filter((client: IClient) => client.logo);
 
 // Duplicate clients array multiple times for seamless infinite loop
-// We need enough duplicates to ensure smooth looping
-const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsWithLogos];
+// We need enough duplicates to ensure smooth looping through all clients
+const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsWithLogos, ...clientsWithLogos, ...clientsWithLogos];
 
 ---
 
@@ -48,6 +48,7 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
             class="logo-slider-track"
             id="logo-slider-track"
             aria-label="Scrolling client logos"
+            style={`--client-count: ${clientsWithLogos.length};`}
           >
             <!-- Logo items - duplicated for seamless loop -->
             {duplicatedClients.map((client: IClient, index: number) => (
@@ -67,8 +68,8 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
                     alt={`${client.name} logo`}
                     class="logo-image"
                     loading="lazy"
-                    width="140"
-                    height="70"
+                    width="180"
+                    height="90"
                     onerror="this.src='/assets/images/logo.png'"
                   />
                 </a>
@@ -102,8 +103,8 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
 
   .logo-slider-track {
     display: flex;
-    gap: 3rem;
-    animation: slide-infinite 25s linear infinite;
+    gap: 1.5rem;
+    animation: slide-infinite 40s linear infinite;
     will-change: transform;
   }
 
@@ -123,8 +124,8 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
     align-items: center;
     justify-content: center;
     /* Responsive widths */
-    width: calc(100% - 2rem); /* Mobile: 1 logo */
-    min-width: calc(100% - 2rem);
+    width: calc(100% - 1rem); /* Mobile: 1 logo */
+    min-width: calc(100% - 1rem);
   }
 
   .logo-link {
@@ -132,7 +133,7 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100px;
+    height: 120px;
     padding: 1.5rem;
     opacity: 0.7;
     transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
@@ -162,10 +163,10 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
   }
 
   .logo-image {
+    width: 180px;
+    height: 90px;
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
     object-fit: contain;
     filter: grayscale(0%);
     transition: filter 0.3s ease, transform 0.3s ease;
@@ -187,18 +188,25 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
     transform: scale(1.05);
   }
 
-  /* Animation - Faster speed */
+  /* Animation - Mobile: 1 logo visible */
+  /* Calculate based on number of unique clients - move by one full set */
   @keyframes slide-infinite {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% / 3));
+      /* Move by the width of one complete set of unique clients */
+      /* Since each item is ~100% width on mobile, we move by 100% * number of unique clients */
+      transform: translateX(calc(-100% * var(--client-count, 12)));
     }
   }
 
   /* Tablet: 2 logos visible */
   @media (min-width: 800px) {
+    .logo-slider-track {
+      gap: 2rem;
+    }
+    
     .logo-slide-item {
       width: calc(50% - 1.5rem); /* 2 logos */
       min-width: calc(50% - 1.5rem);
@@ -216,6 +224,10 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
 
   /* Desktop: 3 logos visible */
   @media (min-width: 1280px) {
+    .logo-slider-track {
+      gap: 3rem;
+    }
+    
     .logo-slide-item {
       width: calc(33.333% - 2rem); /* 3 logos */
       min-width: calc(33.333% - 2rem);

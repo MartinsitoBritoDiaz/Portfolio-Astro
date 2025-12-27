@@ -1,7 +1,8 @@
 export const info = {
   name: "Martinsito Brito Diaz",
   degree: "Software Engineer",
-  "short-description": "Throughout my career, I’ve developed strong expertise in ASP.NET C#, React with TypeScript, and Azure. I have hands-on experience delivering cloud-based solutions and working with Umbraco CMS. My focus is on building scalable, maintainable applications that follow clean code and clean architecture principles.",
+  availableForOpportunities: false,
+  "short-description": "Throughout my career, I've developed strong expertise in ASP.NET C#, React with TypeScript, and Azure. I have hands-on experience delivering cloud-based solutions and working with Umbraco CMS. My focus is on building scalable, maintainable applications that follow clean code and clean architecture principles.",
   description: "Welcome to Martinsito's Software Engineer Portfolio. Dive into my projects, skills, and professional experience in modern software development. I specialize in ASP.NET C#, React with TypeScript, and Azure, with hands-on experience delivering scalable cloud solutions and content-driven applications using Umbraco CMS. My approach emphasizes clean code, clean architecture, and creating solutions that meet real business needs. I take pride in my technical proficiency, problem-solving mindset, and ability to build robust, efficient systems. Passionate about continuous learning and staying current with industry trends, I’m always ready to take on new challenges and grow as a developer.",
   profile: "/assets/images/profile-foto.jpeg",
   hobbies: "I love listening to music, playing video games (add me on playstation user: martinsitobd), also I love traveling abroad. ",

@@ -154,7 +154,7 @@ export const ContactForm = () => {
         <span className="absolute bottom-0 left-0 w-16 h-1 bg-dark-green dark:bg-light-green rounded-full"></span>
       </h2>
 
-      <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 shadow-lg border border-dark-green/10 dark:border-light-green/20">
+      <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-4 sm:p-6 md:p-8 shadow-lg border border-dark-green/10 dark:border-light-green/20">
         <form
           className="space-y-6"
           onSubmit={handleOnSubmit}
@@ -171,7 +171,7 @@ export const ContactForm = () => {
               <span className="text-red-500 ml-1" aria-label="required">*</span>
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 errors.email
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500/20 bg-red-50 dark:bg-red-900/10"
                   : "border-dark-green/20 dark:border-light-green/20 focus:border-dark-green dark:focus:border-light-green focus:ring-dark-green/20 dark:focus:ring-light-green/20 bg-light dark:bg-[#252525]"
@@ -211,7 +211,7 @@ export const ContactForm = () => {
               <span className="text-red-500 ml-1" aria-label="required">*</span>
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 errors.subject
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500/20 bg-red-50 dark:bg-red-900/10"
                   : "border-dark-green/20 dark:border-light-green/20 focus:border-dark-green dark:focus:border-light-green focus:ring-dark-green/20 dark:focus:ring-light-green/20 bg-light dark:bg-[#252525]"

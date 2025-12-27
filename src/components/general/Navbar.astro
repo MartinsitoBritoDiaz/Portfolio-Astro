@@ -11,10 +11,10 @@ const textLinks: { label: string; href: string }[] = [
 ---
 
 <nav
-  class="container flex items-center justify-between h-[80px] sm:h-[200px] sm:justify-center sm:flex-col mt-5 sm:mb-5 mb-10"
+  class="container flex items-center justify-between h-[80px] md:h-[200px] md:justify-center md:flex-col mt-5 md:mb-5 mb-10"
 >
-  <img width="100" height="100" src={info.logo} class="object-contain h-20 w-30 sm:h-40 sm:w-50" alt={info.name} />
-  <ul class="nav-items dark:bg-[#202020] dark:text-light ">
+  <img width="100" height="100" src={info.logo} class="object-contain h-16 w-24 sm:h-20 sm:w-30 md:h-40 md:w-50" alt={info.name} />
+  <ul class="nav-items dark:bg-[#202020] dark:text-light text-xs sm:text-sm">
     {
       textLinks.map(({ label, href }) => (
         <li>
@@ -42,7 +42,7 @@ const textLinks: { label: string; href: string }[] = [
       <button
         aria-label="theme-button"
         id="theme-button"
-        class=" dark:text-light rounded-lg p-4 ml-2 bg-[#3d403a] dark:bg-[#202020] sm:hidden"
+        class=" dark:text-light rounded-lg p-2 sm:p-4 ml-2 bg-[#3d403a] dark:bg-[#202020] md:hidden"
       ></button>
     </li>
   </ul>
@@ -51,7 +51,7 @@ const textLinks: { label: string; href: string }[] = [
 <div  
  class="fixed z-50 bottom-4 right-4" >
   <button aria-label="theme-button"
-  id="theme-button-mobile"class="dark:text-light rounded-lg p-4 ml-2 bg-[#3d403a] dark:bg-[#202020]  hidden sm:block">
+  id="theme-button-mobile"class="dark:text-light rounded-lg p-2 sm:p-4 ml-2 bg-[#3d403a] dark:bg-[#202020] hidden md:block">
   </button>
 </div>
 

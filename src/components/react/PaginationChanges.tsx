@@ -133,9 +133,9 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
             Search projects
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <div className="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
               <svg
-                className="w-5 h-5 text-light-green dark:text-light-green/70"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-light-green dark:text-light-green/70"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -152,10 +152,10 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
             <input
               id="project-search"
               type="text"
-              placeholder="Search projects by name, description, or technology..."
+              placeholder="Search projects..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full pl-12 pr-4 py-3 bg-white dark:bg-[#1a1a1a] border-2 border-dark-green/20 dark:border-light-green/20 rounded-lg text-dark dark:text-light placeholder:text-light-green/50 dark:placeholder:text-light-green/30 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:border-dark-green dark:focus:border-light-green transition-all duration-200"
+              className="w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 text-sm sm:text-base bg-white dark:bg-[#1a1a1a] border-2 border-dark-green/20 dark:border-light-green/20 rounded-lg text-dark dark:text-light placeholder:text-light-green/50 dark:placeholder:text-light-green/30 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:border-dark-green dark:focus:border-light-green transition-all duration-200"
               aria-label="Search projects"
             />
             {searchQuery && (
@@ -192,8 +192,8 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
         {/* Filters Row */}
         <div className="flex flex-col gap-4">
           {/* Project Type Filter */}
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-sm font-semibold text-dark dark:text-light">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+            <span className="text-xs sm:text-sm font-semibold text-dark dark:text-light whitespace-nowrap">
               Project type:
             </span>
             <div className="flex flex-wrap gap-2">
@@ -204,7 +204,7 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
                   e.stopPropagation();
                   handleProjectTypeFilter("all");
                 }}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
                   projectTypeFilter === "all"
                     ? "bg-dark-green dark:bg-light-green text-white"
                     : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
@@ -250,8 +250,8 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             {/* Technology Filter */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-sm font-semibold text-dark dark:text-light">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              <span className="text-xs sm:text-sm font-semibold text-dark dark:text-light whitespace-nowrap">
                 Filter by technology:
               </span>
               <div className="flex flex-wrap gap-2">
@@ -262,7 +262,7 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
                     e.stopPropagation();
                     handleTechFilter("all");
                   }}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
                     selectedTech === "all"
                       ? "bg-dark-green dark:bg-light-green text-white"
                       : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
@@ -280,7 +280,7 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
                       e.stopPropagation();
                       handleTechFilter(tech);
                     }}
-                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
+                    className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green cursor-pointer ${
                       selectedTech.toLowerCase() === tech.toLowerCase()
                         ? "bg-dark-green dark:bg-light-green text-white"
                         : "bg-white dark:bg-[#1a1a1a] text-dark-green dark:text-light-green border-2 border-dark-green/20 dark:border-light-green/20 hover:border-dark-green dark:hover:border-light-green"
