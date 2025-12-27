@@ -26,17 +26,34 @@
     gap: 1rem;
   }
 }
+
+@media (min-width: 800px) {
+  .nav-items {
+    padding: 0.75rem 1.25rem;
+    gap: 1.25rem;
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 .link {
   border: none;
   display: block;
   padding: 0.375rem 0.75rem;
   border-radius: 10rem;
   white-space: nowrap;
+  transition: all 0.2s ease;
 }
 
 @media (min-width: 640px) {
   .link {
     padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .link {
+    padding: 0.625rem 1.25rem;
   }
 }
 .link.active,

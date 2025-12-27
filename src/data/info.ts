@@ -563,16 +563,6 @@ export const info = {
       projects: [],
     },
     {
-      id: "banreservas",
-      name: "Banreservas",
-      logo: "/assets/images/banreservas.png",
-      industry: "Banking & Financial Services",
-      website: "https://www.banreservas.com",
-      description: "Banco de Reservas de la República Dominicana (Banreservas) is the largest state-owned bank in the Dominican Republic, established in 1941. It offers comprehensive banking services including personal banking, corporate banking, loans, investments, and international banking services. The bank has a significant presence both domestically and internationally, with representative offices in Madrid, New York, and Miami, serving the Dominican diaspora and promoting the country's financial services abroad.",
-      engagementContext: "Intermediate Software Developer - Developing enterprise portals and financial management systems using ASP.NET, Azure, and Umbraco CMS.",
-      projects: [],
-    },
-    {
       id: "alcanza",
       name: "Alcanza",
       logo: "/assets/images/alcanza.png",
@@ -581,6 +571,16 @@ export const info = {
       description: "Leading financial technology (fintech) platform from the Dominican Republic, developed by AFP Siembra. Alcanza is a comprehensive digital savings solution designed to help users achieve financial goals such as retirement, housing, education, health, and emergency funds through goal-oriented savings with flexible contribution options and real-time tracking.",
       engagementContext: "Team Lead - Leading the development team in building the fintech platform using ASP.NET, Azure, Umbraco CMS, React, and TypeScript. Overseeing architecture, feature development, and ensuring high-quality delivery of the mobile-first financial application.",
       projects: ["Alcanza"],
+    },
+    {
+      id: "banreservas",
+      name: "Banreservas",
+      logo: "/assets/images/banreservas.png",
+      industry: "Banking & Financial Services",
+      website: "https://www.banreservas.com",
+      description: "Banco de Reservas de la República Dominicana (Banreservas) is the largest state-owned bank in the Dominican Republic, established in 1941. It offers comprehensive banking services including personal banking, corporate banking, loans, investments, and international banking services. The bank has a significant presence both domestically and internationally, with representative offices in Madrid, New York, and Miami, serving the Dominican diaspora and promoting the country's financial services abroad.",
+      engagementContext: "Intermediate Software Developer - Developing enterprise portals and financial management systems using ASP.NET, Azure, and Umbraco CMS.",
+      projects: [],
     },
     {
       id: "carol",
