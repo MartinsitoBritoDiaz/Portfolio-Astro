@@ -66,9 +66,7 @@ const textLinks: { label: string; href: string }[] = [
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
+    // Default to light mode (white)
     return "light";
   })();
   let isDark;

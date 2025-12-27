@@ -15,25 +15,107 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="keywords" content="software engineer, web developer, portfolio, .net, asp.net, react, umbraco, cms, azure, cloud, desarrollador, ingeniero de software, ingeniero de sistemas">
+<meta name="keywords" content="software developer DR, software developer Dominican Republic, web application developer DR, web application developer Dominican Republic, desarrollador de software República Dominicana, desarrollador web aplicaciones DR, ASP.NET developer DR, React developer Dominican Republic, Azure developer DR, Umbraco developer DR, software engineer DR, full stack developer DR, web developer Dominican Republic, aplicaciones web República Dominicana, desarrollo de software DR, programador software DR, ingeniero de software República Dominicana, .NET developer DR, TypeScript developer DR, cloud solutions DR, enterprise web applications DR">
 <meta name="author" content="Martinsito Brito Diaz">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Martinsito's Software Engineer Portfolio">
-<meta property="og:description" content="Explore Martinsito Brito Diaz's projects, skills, and experience in software development.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="English, Spanish">
+<meta name="geo.region" content="DO">
+<meta name="geo.placename" content="Dominican Republic">
+<meta name="geo.position" content="18.4861;-69.9312">
+<meta name="ICBM" content="18.4861, -69.9312">
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://martinsitobd.netlify.app/">
-<meta property="og:site_name" content="Martinsito's Portfolio">
-<meta name="twitter:title" content="Martinsito's Software Engineer Portfolio">
-<meta name="twitter:description" content="Explore Martinsito's projects, skills, and experience in software development.">
+<meta property="og:title" content="Martinsito Brito Diaz - Software Developer DR | Web Application Developer Dominican Republic">
+<meta property="og:description" content="Senior Software Developer in Dominican Republic specializing in web applications, ASP.NET C#, React, TypeScript, Azure, and Umbraco CMS. Expert in building scalable cloud solutions and enterprise web applications.">
+<meta property="og:image" content="https://martinsitobd.netlify.app/assets/images/profile-foto.jpeg">
+<meta property="og:site_name" content="Martinsito Brito Diaz - Software Developer DR">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_DO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://martinsitobd.netlify.app/">
+<meta name="twitter:title" content="Martinsito Brito Diaz - Software Developer DR | Web Application Developer">
+<meta name="twitter:description" content="Senior Software Developer in Dominican Republic specializing in web applications, ASP.NET C#, React, TypeScript, Azure, and Umbraco CMS.">
+<meta name="twitter:image" content="https://martinsitobd.netlify.app/assets/images/profile-foto.jpeg">
+<meta name="twitter:creator" content="@martinbd09">
+
+<!-- Additional SEO Meta Tags -->
 <meta name="azure-certification" content="Microsoft Certified: Azure Developer Associate">
 <meta name="azure-certification-description" content="Demonstrate your expertise in designing, building, testing, and maintaining cloud solutions on Microsoft Azure with the Azure Developer Associate certification.">
 <meta name="azure-certification-topics" content="Azure development, cloud computing, Azure services, Azure App Service, Azure Functions, Azure Storage, Azure SQL Database, Azure Cosmos DB, Azure DevOps">
 <meta name="azure-certification-benefits" content="Validate your skills and knowledge in Azure development, increase your career opportunities, earn recognition from employers, gain access to exclusive Microsoft resources and community, stay updated with the latest Azure technologies and best practices">
 
-<!-- Link -->
+<!-- Canonical URL -->
+<link rel="canonical" href={`https://martinsitobd.netlify.app${Astro.url.pathname}`} />
+
+<!-- Links -->
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 />
-
 <link rel="shortcut icon" type="image/ico" href="/assets/favicon.ico"/>
+
+<!-- Structured Data (JSON-LD) for SEO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Martinsito Brito Diaz",
+  "jobTitle": "Senior Software Developer",
+  "description": "Senior Software Developer in Dominican Republic specializing in web applications, ASP.NET C#, React, TypeScript, Azure, and Umbraco CMS.",
+  "url": "https://martinsitobd.netlify.app",
+  "image": "https://martinsitobd.netlify.app/assets/images/profile-foto.jpeg",
+  "sameAs": [
+    "https://www.linkedin.com/in/martinsito-brito-diaz-ab4a48213/",
+    "https://github.com/MartinsitoBritoDiaz",
+    "https://twitter.com/martinbd09"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "DO",
+    "addressRegion": "Dominican Republic"
+  },
+  "knowsAbout": [
+    "Software Development",
+    "Web Applications",
+    "ASP.NET C#",
+    "React",
+    "TypeScript",
+    "Azure",
+    "Umbraco CMS",
+    "Cloud Solutions",
+    "Enterprise Applications"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Microsoft Certified: Azure Developer Associate",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Microsoft"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Professional Certification",
+      "name": "Umbraco Professional",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Umbraco"
+      }
+    }
+  ]
+})} />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Z6N03JCGY"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7Z6N03JCGY');
+</script>
