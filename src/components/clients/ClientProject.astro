@@ -9,64 +9,64 @@ const { project } = Astro.props;
 ---
 
 <div 
-  class="client-project-card group relative bg-white dark:bg-[#252525] rounded-lg p-4 sm:p-6 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40 hover:shadow-md transition-all duration-300"
+  class="client-project-card group relative bg-white dark:bg-[#252525] rounded-lg p-3 sm:p-4 md:p-6 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40 hover:shadow-md transition-all duration-300"
 >
   <!-- Project Image -->
   <a
     href={project.isDeploy ? project.liveSite : project.code}
     target={project.isDeploy ? "_blank" : undefined}
     rel="noopener noreferrer"
-    class="block mb-4 rounded-lg overflow-hidden bg-dark-green/5 dark:bg-light-green/5"
+    class="block mb-3 sm:mb-4 rounded-lg overflow-hidden bg-dark-green/5 dark:bg-light-green/5"
     aria-label={`View ${project.name} project`}
   >
     <img
       src={project.image || "/assets/images/logo.png"}
       alt={`${project.name} project screenshot`}
-      class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+      class="w-full h-32 sm:h-36 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
       loading="lazy"
       onerror="this.src='/assets/images/logo.png'"
     />
   </a>
 
   <!-- Project Info -->
-  <div class="space-y-3">
-    <h4 class="text-lg font-bold text-dark dark:text-light group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-200">
+  <div class="space-y-2.5 sm:space-y-3">
+    <h4 class="text-base sm:text-lg font-bold text-dark dark:text-light group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-200 leading-tight">
       <a
         href={project.isDeploy ? project.liveSite : project.code}
         target={project.isDeploy ? "_blank" : undefined}
         rel="noopener noreferrer"
-        class="hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+        class="hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded touch-manipulation"
       >
         {project.name}
       </a>
     </h4>
 
-    <p class="text-sm text-dark/80 dark:text-light/80 line-clamp-2">
+    <p class="text-xs sm:text-sm text-dark/80 dark:text-light/80 line-clamp-2 leading-relaxed">
       {project.description}
     </p>
 
     <!-- Role & Impact -->
     {(project.role || project.impact) && (
-      <div class="space-y-2 pt-2 border-t border-dark-green/10 dark:border-light-green/20">
+      <div class="space-y-2.5 sm:space-y-3 pt-2.5 sm:pt-3 border-t border-dark-green/10 dark:border-light-green/20">
         {project.role && (
-          <div class="flex items-start gap-2">
+          <div class="flex items-start gap-2 sm:gap-2.5">
             <svg class="w-4 h-4 text-dark-green dark:text-light-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-            <div>
-              <p class="text-xs font-semibold text-dark-green dark:text-light-green uppercase tracking-wide">Role</p>
-              <p class="text-sm text-dark/80 dark:text-light/80">{project.role}</p>
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-semibold text-dark-green dark:text-light-green uppercase tracking-wide mb-0.5">Role</p>
+              <p class="text-xs sm:text-sm text-dark/80 dark:text-light/80 leading-relaxed">{project.role}</p>
             </div>
           </div>
         )}
         {project.impact && (
-          <div class="flex items-start gap-2">
+          <div class="flex items-start gap-2 sm:gap-2.5">
             <svg class="w-4 h-4 text-dark-green dark:text-light-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
-            <div>
-              <p class="text-xs font-semibold text-dark-green dark:text-light-green uppercase tracking-wide">Impact</p>
-              <p class="text-sm text-dark/80 dark:text-light/80">{project.impact}</p>
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-semibold text-dark-green dark:text-light-green uppercase tracking-wide mb-0.5">Impact</p>
+              <p class="text-xs sm:text-sm text-dark/80 dark:text-light/80 leading-relaxed">{project.impact}</p>
             </div>
           </div>
         )}
@@ -74,36 +74,36 @@ const { project } = Astro.props;
     )}
 
     <!-- Technologies -->
-    <div class="flex flex-wrap gap-2 pt-2">
+    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2.5 sm:pt-3">
       {project.technologies.slice(0, 4).map((tech: string, index: number) => (
         <span
           key={index}
-          class="inline-flex items-center px-2 py-1 text-xs font-medium rounded bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green border border-dark-green/20 dark:border-light-green/30"
+          class="inline-flex items-center px-2 sm:px-2.5 py-1 text-xs font-medium rounded-md bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green border border-dark-green/20 dark:border-light-green/30"
         >
           {tech}
         </span>
       ))}
       {project.technologies.length > 4 && (
-        <span class="inline-flex items-center px-2 py-1 text-xs font-medium text-dark/60 dark:text-light/60">
+        <span class="inline-flex items-center px-2 sm:px-2.5 py-1 text-xs font-medium text-dark/60 dark:text-light/60">
           +{project.technologies.length - 4} more
         </span>
       )}
     </div>
 
     <!-- Action Links -->
-    <div class="flex items-center gap-3 pt-2">
+    <div class="flex items-center gap-3 pt-2.5 sm:pt-3">
       {project.isDeploy && project.liveSite && (
         <a
           href={project.liveSite}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 text-xs font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
+          class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-dark-green dark:bg-light-green rounded-lg hover:bg-dark-green/90 dark:hover:bg-light-green/90 transition-colors focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation min-h-[44px]"
           aria-label={`Visit ${project.name} live site`}
         >
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
-          Live Demo
+          <span>Live Demo</span>
         </a>
       )}
     </div>

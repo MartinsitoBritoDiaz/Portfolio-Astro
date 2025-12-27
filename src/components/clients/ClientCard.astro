@@ -11,97 +11,91 @@ const { client, projects } = Astro.props;
 ---
 
 <article 
-  class="client-card group bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 lg:p-10 shadow-lg border border-dark-green/10 dark:border-light-green/20 hover:shadow-xl transition-all duration-300"
+  class="client-card group bg-white dark:bg-[#1a1a1a] rounded-2xl sm:rounded-xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-lg border border-dark-green/10 dark:border-light-green/20 hover:shadow-xl transition-all duration-300 overflow-hidden w-full max-w-full"
   role="article"
   aria-labelledby={`client-${client.id}`}
 >
-  <!-- Client Header -->
-  <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 mb-6 sm:mb-8">
-    <!-- Logo -->
-    <div class="flex-shrink-0 mx-auto sm:mx-0">
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-        <div class="relative bg-white dark:bg-[#252525] p-3 sm:p-4 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300">
-          <img
-            src={client.logo || "/assets/images/logo.png"}
-            alt={`${client.name} logo`}
-            class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain"
-            loading="lazy"
-            onerror="this.src='/assets/images/logo.png'"
-          />
-        </div>
+  <!-- Logo - At the top, centered -->
+  <div class="flex justify-center mb-4 sm:mb-5 md:mb-6">
+    <div class="relative">
+      <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+      <div class="relative bg-white dark:bg-[#252525] p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+        <img
+          src={client.logo || "/assets/images/logo.png"}
+          alt={`${client.name} logo`}
+          class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 object-contain max-w-full"
+          loading="lazy"
+          onerror="this.src='/assets/images/logo.png'"
+        />
       </div>
     </div>
+  </div>
 
-    <!-- Client Info -->
-    <div class="flex-1">
-      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-        <div>
-          <h2 
-            id={`client-${client.id}`}
-            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-dark dark:text-light mb-2 text-center sm:text-left"
+  <!-- Client Info -->
+  <div class="text-center sm:text-left min-w-0 w-full">
+      <h2 
+        id={`client-${client.id}`}
+        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-dark dark:text-light mb-3 sm:mb-4 md:mb-5 leading-tight break-words"
+      >
+        {client.name}
+      </h2>
+      
+      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-4 sm:mb-5 md:mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full flex-shrink-0">
+          <svg class="w-4 h-4 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+          <span class="whitespace-nowrap">{client.industry}</span>
+        </span>
+        {client.website && (
+          <a
+            href={client.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-dark-green dark:text-light-green hover:bg-dark-green/10 dark:hover:bg-light-green/20 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation min-h-[36px] sm:min-h-[40px] flex-shrink-0"
+            aria-label={`Visit ${client.name} website`}
           >
-            {client.name}
-          </h2>
-          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 mb-3">
-            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-semibold bg-dark-green/10 dark:bg-light-green/20 text-dark-green dark:text-light-green rounded-full">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-              {client.industry}
-            </span>
-            {client.website && (
-              <a
-                href={client.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-medium text-dark-green dark:text-light-green hover:underline focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 rounded"
-                aria-label={`Visit ${client.name} website`}
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                Visit Website
-              </a>
-            )}
-          </div>
-        </div>
+            <svg class="w-4 h-4 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="whitespace-nowrap">Visit Website</span>
+          </a>
+        )}
       </div>
 
       <!-- Description -->
       {client.description && (
-        <p class="text-base sm:text-lg text-dark/80 dark:text-light/80 leading-relaxed mb-4">
+        <p class="text-sm sm:text-base md:text-lg text-dark/80 dark:text-light/80 leading-relaxed mb-5 sm:mb-6 md:mb-6 break-words overflow-wrap-anywhere">
           {client.description}
         </p>
       )}
 
       <!-- Engagement Context -->
       {client.engagementContext && (
-        <div class="bg-dark-green/5 dark:bg-light-green/10 border-l-4 border-dark-green dark:border-light-green rounded-r-lg p-4 mb-4">
-          <p class="text-sm font-semibold text-dark-green dark:text-light-green mb-1">
+        <div class="bg-gradient-to-r from-dark-green/5 to-dark-green/10 dark:from-light-green/10 dark:to-light-green/15 border-l-4 border-dark-green dark:border-light-green rounded-r-lg p-4 sm:p-4 md:p-5 w-full">
+          <p class="text-xs sm:text-sm font-bold text-dark-green dark:text-light-green mb-2 sm:mb-2.5 uppercase tracking-wider break-words">
             My Role & Engagement
           </p>
-          <p class="text-sm text-dark/80 dark:text-light/80">
+          <p class="text-sm sm:text-base md:text-base text-dark/90 dark:text-light/90 leading-relaxed font-medium break-words overflow-wrap-anywhere">
             {client.engagementContext}
           </p>
         </div>
       )}
     </div>
-  </div>
 
   <!-- Projects Section - Only show if there are projects -->
   {projects.length > 0 && (
-    <div class="border-t border-dark-green/10 dark:border-light-green/20 pt-8">
-      <div class="flex items-center justify-between mb-6">
-        <h3 class="text-xl sm:text-2xl font-bold text-dark dark:text-light">
+    <div class="border-t border-dark-green/10 dark:border-light-green/20 pt-5 sm:pt-6 md:pt-8 w-full overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 mb-4 sm:mb-5 md:mb-6 w-full">
+        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-dark dark:text-light break-words">
           Projects Delivered
         </h3>
-        <span class="text-sm text-dark/70 dark:text-light/70">
+        <span class="text-xs sm:text-sm text-dark/70 dark:text-light/70 font-medium flex-shrink-0">
           {projects.length} {projects.length === 1 ? "project" : "projects"}
         </span>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 w-full">
         {projects.map((project) => (
           <ClientProject project={project} />
         ))}
@@ -109,4 +103,28 @@ const { client, projects } = Astro.props;
     </div>
   )}
 </article>
+
+<style>
+  .client-card {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .client-card * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .client-card h2,
+  .client-card p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .client-card img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 
