@@ -5,24 +5,24 @@ import { ICertification, ICertificationsProps } from "@types";
 const { certifications } = Astro.props as ICertificationsProps;
 ---
 
-<section class="certifications-section py-16 sm:py-20 lg:py-24" aria-labelledby="certifications-heading">
-  <div class="w-full">
+<section class="certifications-section py-12 sm:py-16 md:py-20 lg:py-24 overflow-x-hidden w-full max-w-full" aria-labelledby="certifications-heading">
+  <div class="w-full max-w-full overflow-x-hidden">
     <!-- Section Header -->
-    <div class="text-center mb-12 sm:mb-16">
+    <div class="text-center mb-8 sm:mb-12 md:mb-16">
       <h2 
         id="certifications-heading"
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark dark:text-light mb-4 relative inline-block"
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-dark dark:text-light mb-3 sm:mb-4 relative inline-block"
       >
         <span class="relative z-10">Professional Certifications</span>
-        <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-dark-green to-transparent dark:via-light-green rounded-full"></span>
+        <span class="absolute -bottom-1.5 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-dark-green to-transparent dark:via-light-green rounded-full"></span>
       </h2>
-      <p class="text-lg sm:text-xl text-dark/80 dark:text-light/80 max-w-2xl mx-auto mt-4">
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl text-dark/80 dark:text-light/80 max-w-2xl mx-auto mt-3 sm:mt-4 px-4 sm:px-0">
         Validated expertise in modern technologies and cloud platforms
       </p>
     </div>
 
-    <!-- Certifications Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+    <!-- Certifications Grid - Single column on mobile, 2 columns on tablet, 3 on desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10">
       {
         certifications.map((certification: ICertification, index) => (
           <div 

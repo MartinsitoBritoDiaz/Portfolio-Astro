@@ -5,9 +5,9 @@ import { IHeroProps } from "@types";
 const { name, degree, about, availableForOpportunities = false } = Astro.props as IHeroProps;
 ---
 
-<section class="hero-section min-h-[85vh] sm:min-h-[90vh] flex items-center py-12 sm:py-16 lg:py-20" aria-labelledby="hero-heading">
-  <div class="w-full">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<section class="hero-section min-h-[85vh] sm:min-h-[90vh] flex items-center py-12 sm:py-16 lg:py-20 w-full max-w-full" aria-labelledby="hero-heading" style="overflow-x: visible !important; overflow-y: visible !important;">
+  <div class="w-full max-w-full" style="overflow-x: visible !important; overflow-y: visible !important;">
+    <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center w-full max-w-full">
       <!-- Content Section -->
       <div class="order-2 lg:order-1 space-y-6 sm:space-y-8">
         <!-- Greeting -->
@@ -17,21 +17,21 @@ const { name, degree, about, availableForOpportunities = false } = Astro.props a
         </div>
 
         <!-- Name & Title -->
-        <div class="space-y-3 sm:space-y-4">
+        <div class="space-y-3 sm:space-y-4 w-full max-w-full">
           <h1 
             id="hero-heading"
-            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight break-words"
           >
             <span class="block text-dark dark:text-light">
-              I'm <span class="text-dark-green dark:text-light-green relative inline-block">
+              I'm <span class="text-dark-green dark:text-light-green relative inline-block break-words">
                 {name}
                 <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-dark-green via-light-green to-transparent dark:from-light-green dark:via-dark-green rounded-full opacity-60"></span>
               </span>
             </span>
           </h1>
           
-          <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-dark-green dark:text-light-green">
+          <div class="flex flex-wrap items-center gap-3 sm:gap-4 w-full">
+            <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-dark-green dark:text-light-green break-words">
               {degree}
             </h2>
             {availableForOpportunities && (
@@ -47,7 +47,7 @@ const { name, degree, about, availableForOpportunities = false } = Astro.props a
         </div>
 
         <!-- Description -->
-        <p class="text-lg sm:text-xl lg:text-2xl text-dark/90 dark:text-light/90 leading-relaxed max-w-2xl font-normal">
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-dark/90 dark:text-light/90 leading-relaxed max-w-2xl font-normal break-words overflow-wrap-anywhere">
           {about}
         </p>
 
@@ -118,13 +118,13 @@ const { name, degree, about, availableForOpportunities = false } = Astro.props a
       </div>
 
       <!-- Visual Section -->
-      <div class="order-1 lg:order-2 flex items-center justify-center lg:justify-end">
-        <div class="relative w-full max-w-md lg:max-w-lg">
+      <div class="order-1 lg:order-2 flex items-center justify-center lg:justify-end w-full px-3 sm:px-4 md:px-6" style="overflow: visible !important; overflow-x: visible !important; overflow-y: visible !important; position: relative;">
+        <div class="relative w-full max-w-[180px] sm:max-w-[240px] md:max-w-[320px] lg:max-w-md xl:max-w-lg mx-auto" style="overflow: visible !important; overflow-x: visible !important; overflow-y: visible !important;">
           <!-- Decorative background elements -->
-          <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 via-light-green/10 to-transparent dark:from-light-green/20 dark:via-dark-green/10 rounded-3xl blur-3xl transform rotate-6"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 via-light-green/10 to-transparent dark:from-light-green/20 dark:via-dark-green/10 rounded-3xl blur-3xl transform rotate-6" style="overflow: visible !important;"></div>
           
           <!-- Main image container -->
-          <div class="relative z-10">
+          <div class="relative z-10 w-full" style="overflow: visible !important; overflow-x: visible !important; overflow-y: visible !important; padding: 0.25rem;">
             <img 
               width="600" 
               height="600" 
@@ -133,6 +133,7 @@ const { name, degree, about, availableForOpportunities = false } = Astro.props a
               alt="Code background illustration representing software development" 
               loading="eager"
               fetchpriority="high"
+              style="display: block; width: 100%; height: auto; max-width: 100%; object-fit: contain; transform-origin: center center;"
             />
           </div>
         </div>

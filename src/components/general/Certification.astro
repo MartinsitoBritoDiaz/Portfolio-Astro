@@ -5,61 +5,64 @@ const { title, logo, description, earnedOn, expiresOn, verificationUrl } = Astro
 ---
 
 <article 
-  class="group relative h-full bg-white dark:bg-[#1a1a1a] rounded-xl p-6 sm:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40 hover:-translate-y-1"
+  class="group relative bg-white dark:bg-[#1a1a1a] rounded-xl md:rounded-2xl p-5 sm:p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-dark-green/10 dark:border-light-green/20 hover:border-dark-green/30 dark:hover:border-light-green/40 hover:-translate-y-1 flex flex-col w-full max-w-full overflow-hidden"
   role="article"
   aria-labelledby={`certification-${title.toLowerCase().replace(/\s+/g, '-')}`}
 >
   <!-- Decorative gradient overlay on hover -->
-  <div class="absolute inset-0 bg-gradient-to-br from-dark-green/5 via-transparent to-light-green/5 dark:from-light-green/5 dark:to-dark-green/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-dark-green/5 via-transparent to-light-green/5 dark:from-light-green/5 dark:to-dark-green/5 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-  <div class="relative z-10 flex flex-col items-center text-center h-full">
-    <!-- Logo Container -->
-    <div class="mb-6 relative">
-      <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-      <div class="relative bg-white dark:bg-[#252525] p-4 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300">
-        <img
-          class="w-20 h-20 sm:w-24 sm:h-24 object-contain"
-          src={logo}
-          alt={`${title} certification badge`}
-          loading="lazy"
-        />
+  <div class="relative z-10 flex flex-col h-full">
+    <!-- Mobile: Horizontal Layout, Desktop: Vertical Layout -->
+    <div class="flex flex-row md:flex-col items-start md:items-center gap-4 md:gap-0 mb-4 md:mb-6">
+      <!-- Logo Container -->
+      <div class="flex-shrink-0 md:mb-5 lg:mb-6 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-green/20 to-light-green/20 dark:from-light-green/20 dark:to-dark-green/20 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+        <div class="relative bg-white dark:bg-[#252525] p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300">
+          <img
+            class="w-20 h-20 md:w-24 md:h-24 object-contain"
+            src={logo}
+            alt={`${title} certification badge`}
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Content - Mobile: Left aligned, Desktop: Centered -->
+      <div class="flex-1 flex flex-col md:items-center md:text-center space-y-2 md:space-y-3 min-w-0">
+        <h3 
+          id={`certification-${title.toLowerCase().replace(/\s+/g, '-')}`}
+          class="text-lg md:text-xl lg:text-2xl font-bold text-dark dark:text-light group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-300 leading-tight"
+        >
+          {title}
+        </h3>
+        
+        <p class="text-sm md:text-base text-dark-green dark:text-light-green font-semibold">
+          {description}
+        </p>
       </div>
     </div>
 
-    <!-- Content -->
-    <div class="flex-1 flex flex-col items-center space-y-3 mb-6">
-      <h3 
-        id={`certification-${title.toLowerCase().replace(/\s+/g, '-')}`}
-        class="text-xl sm:text-2xl font-bold text-dark dark:text-light group-hover:text-dark-green dark:group-hover:text-light-green transition-colors duration-300"
-      >
-        {title}
-      </h3>
-      
-      <p class="text-sm sm:text-base text-dark-green dark:text-light-green font-semibold">
-        {description}
-      </p>
-
-      <!-- Date Information -->
-      <div class="flex flex-col items-center gap-2 text-sm text-light-green dark:text-light-green/80">
+    <!-- Date Information - Always full width -->
+    <div class="flex flex-col gap-2 mb-5 md:mb-6 text-sm text-dark/70 dark:text-light/70 border-t border-dark-green/10 dark:border-light-green/20 pt-4 md:pt-0 md:border-t-0">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 flex-shrink-0 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <time datetime={earnedOn} class="whitespace-nowrap">
+          Issued {earnedOn}
+        </time>
+      </div>
+      {expiresOn && expiresOn.length > 0 && (
         <div class="flex items-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          <svg class="w-4 h-4 flex-shrink-0 text-dark-green dark:text-light-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <time datetime={earnedOn}>
-            Issued {earnedOn}
+          <time datetime={expiresOn} class="whitespace-nowrap">
+            Expires {expiresOn}
           </time>
         </div>
-        {expiresOn && expiresOn.length > 0 && (
-          <div class="flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <time datetime={expiresOn}>
-              Expires {expiresOn}
-            </time>
-          </div>
-        )}
-      </div>
+      )}
     </div>
 
     <!-- CTA Button -->
@@ -67,11 +70,11 @@ const { title, logo, description, earnedOn, expiresOn, verificationUrl } = Astro
       href={verificationUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="group/btn w-full inline-flex items-center justify-center gap-2 bg-dark-green dark:bg-light-green text-white font-semibold py-3 px-6 rounded-lg hover:bg-dark-green/90 dark:hover:bg-light-green/90 transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green"
+      class="group/btn w-full inline-flex items-center justify-center gap-2 bg-dark-green dark:bg-light-green text-white font-semibold py-3.5 px-6 rounded-lg hover:bg-dark-green/90 dark:hover:bg-light-green/90 transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-green dark:focus:ring-light-green touch-manipulation min-h-[48px] text-base mt-auto"
       aria-label={`Verify ${title} certification`}
     >
       <span>Verify Badge</span>
-      <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
       </svg>
     </a>

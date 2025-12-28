@@ -15,11 +15,11 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
 
 {clientsWithLogos.length > 0 && (
   <section 
-    class="clients-logos-section py-12 sm:py-16 lg:py-20"
+    class="clients-logos-section py-12 sm:py-16 lg:py-20 overflow-x-hidden w-full max-w-full"
     aria-labelledby="clients-logos-heading"
   >
-    <div class="w-full">
-      <div class="container-sm">
+    <div class="w-full max-w-full overflow-x-hidden">
+      <div class="container-sm w-full max-w-full overflow-x-hidden">
       <!-- Section Header -->
       <div class="text-center mb-8 sm:mb-12">
         <h2 
@@ -126,6 +126,7 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
     /* Responsive widths */
     width: calc(100% - 1rem); /* Mobile: 1 logo */
     min-width: calc(100% - 1rem);
+    max-width: calc(100% - 1rem);
   }
 
   .logo-link {
@@ -165,11 +166,20 @@ const duplicatedClients = [...clientsWithLogos, ...clientsWithLogos, ...clientsW
   .logo-image {
     width: 180px;
     height: 90px;
-    max-width: 100%;
+    max-width: calc(100% - 2rem);
     max-height: 100%;
     object-fit: contain;
     filter: grayscale(0%);
     transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Mobile: Smaller logo size */
+  @media (max-width: 800px) {
+    .logo-image {
+      width: 140px;
+      height: 70px;
+      max-width: calc(100% - 2rem);
+    }
   }
 
   .logo-link:hover .logo-image,

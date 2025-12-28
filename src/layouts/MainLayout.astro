@@ -16,9 +16,9 @@ import Footer from "@components/general/Footer.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
 
-  <body>
+  <body class="overflow-x-hidden">
 	<Navbar />
-	<main class="container-sm sm:px-8 min-h-screen" >
+	<main class="container-sm min-h-screen overflow-x-hidden w-full max-w-full" >
 		<slot />
 	</main>
 	<Footer />

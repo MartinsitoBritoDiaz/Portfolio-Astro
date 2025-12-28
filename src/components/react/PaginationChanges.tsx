@@ -402,59 +402,68 @@ export const PaginationChanges = ({ projects = [] }: PaginationChangesProps) => 
           {/* Pagination */}
           {totalPages > 1 && (
             <nav
-              className="pagination-nav mt-8 sm:mt-12"
+              className="pagination-nav mt-8 sm:mt-12 w-full max-w-full overflow-hidden"
               aria-label="Projects pagination"
             >
-              {/* Mobile: Simplified Pagination */}
-              <div className="flex sm:hidden items-center justify-between gap-3 bg-white dark:bg-[#1a1a1a] rounded-xl p-4 border border-dark-green/10 dark:border-light-green/20 shadow-sm">
-                <button
-                  type="button"
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage <= 1}
-                  className="flex items-center justify-center w-12 h-12 rounded-lg text-dark-green dark:text-light-green bg-dark-green/10 dark:bg-light-green/20 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-dark-green/20 dark:hover:bg-light-green/30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation"
-                  aria-label="Go to previous page"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+              {/* Mobile: Simplified Pagination - Arrows Only */}
+              <div className="flex md:hidden flex-col gap-3 w-full max-w-full px-2">
+                {/* Navigation Buttons - Arrows Only */}
+                <div className="flex items-center justify-between gap-3 bg-white dark:bg-[#1a1a1a] rounded-xl p-3 border border-dark-green/10 dark:border-light-green/20 shadow-sm w-full max-w-full box-border">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handlePageChange(currentPage - 1);
+                    }}
+                    disabled={currentPage <= 1}
+                    className="flex items-center justify-center w-12 h-12 rounded-lg text-dark-green dark:text-light-green bg-dark-green/10 dark:bg-light-green/20 disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-dark-green/20 enabled:dark:hover:bg-light-green/30 enabled:active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation flex-shrink-0 z-10 relative pointer-events-auto"
+                    aria-label="Go to previous page"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
 
-                <div className="flex-1 text-center">
-                  <span className="text-sm font-semibold text-dark dark:text-light">
-                    Page {currentPage}
-                  </span>
-                  <span className="text-xs text-dark/60 dark:text-light/60 block mt-0.5">
-                    of {totalPages}
-                  </span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handlePageChange(currentPage + 1);
+                    }}
+                    disabled={currentPage >= totalPages}
+                    className="flex items-center justify-center w-12 h-12 rounded-lg text-dark-green dark:text-light-green bg-dark-green/10 dark:bg-light-green/20 disabled:opacity-30 disabled:cursor-not-allowed enabled:hover:bg-dark-green/20 enabled:dark:hover:bg-light-green/30 enabled:active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation flex-shrink-0 z-10 relative pointer-events-auto"
+                    aria-label="Go to next page"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage >= totalPages}
-                  className="flex items-center justify-center w-12 h-12 rounded-lg text-dark-green dark:text-light-green bg-dark-green/10 dark:bg-light-green/20 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-dark-green/20 dark:hover:bg-light-green/30 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-dark-green dark:focus:ring-light-green focus:ring-offset-2 touch-manipulation"
-                  aria-label="Go to next page"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                {/* Page Info at Bottom */}
+                <div className="text-center w-full py-1">
+                  <span className="text-sm font-semibold text-dark dark:text-light">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                </div>
               </div>
 
               {/* Desktop: Full Pagination */}
-              <div className="hidden sm:flex items-center justify-between gap-4 bg-white dark:bg-[#1a1a1a] rounded-xl p-4 sm:p-5 border border-dark-green/10 dark:border-light-green/20 shadow-sm">
+              <div className="hidden md:flex items-center justify-between gap-4 bg-white dark:bg-[#1a1a1a] rounded-xl p-4 sm:p-5 border border-dark-green/10 dark:border-light-green/20 shadow-sm">
                 {/* Page Info */}
                 <div className="text-sm font-medium text-dark/70 dark:text-light/70">
                   Page <span className="font-semibold text-dark dark:text-light">{currentPage}</span> of <span className="font-semibold text-dark dark:text-light">{totalPages}</span>

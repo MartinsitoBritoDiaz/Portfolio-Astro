@@ -9,7 +9,7 @@ import ClientLogos from "@components/home/ClientLogos.astro";
 ---
 
 <MainLayout>
-  <main class="home-page">
+  <div class="home-page">
     <!-- Hero Section - First Impression & Value Proposition -->
     <Hero
       name={info.name.split(" ")[0]}
@@ -26,12 +26,25 @@ import ClientLogos from "@components/home/ClientLogos.astro";
 
     <!-- Client Logos Section - Social Proof -->
     <ClientLogos />
-  </main>
+  </div>
 </MainLayout>
 
 <style>
   .home-page {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Allow hero section to overflow for floating icon */
+  .home-page .hero-section {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
+  /* Contain overflow for other sections */
+  .home-page > *:not(.hero-section) {
+    overflow-x: hidden;
   }
   
   /* Smooth scroll offset for anchor links */
